@@ -50,7 +50,7 @@ const Header = () => {
                         <DialogTrigger asChild>
                             <Button className="border-2 border-orange-400 hover:bg-orange-400" variant={"outline"}><span className="hidden md:inline">Share</span> <GoShareAndroid className=" ml-1 w-4 h-4" /></Button>
                         </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px]">
+                        <DialogContent className=" max-w-[90vw] md:max-w-[425px]">
                             <div className="flex flex-col items-center justify-center gap-6 py-8">
                                 <a href="#" className="flex items-center gap-2">
                                     <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
