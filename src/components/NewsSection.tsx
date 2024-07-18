@@ -18,7 +18,7 @@ const NewsSection = () => {
             <div className="container px-4 md:px-10 mt-8">
                 <Carousel plugins={[
                     Autoplay({
-                        delay: 2000,
+                        delay: 4000,
                     }),
                 ]}>
                     <CarouselContent>
