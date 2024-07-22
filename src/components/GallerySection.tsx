@@ -1,11 +1,25 @@
-import { useState } from "react"
+import {
+    Carousel,
+    CarouselMainContainer,
+    SliderMainItem,
+} from "@/components/ui/extension-carousel";
+import { useContext, useState } from "react"
 import { Dialog, DialogContent } from "@/components/ui/dialog"
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
-import { cn } from "@/lib/utils";
+import { ProfileContext } from "@/context/MyContext";
+import AutoScroll from "embla-carousel-auto-scroll";
+
 
 const GallerySection = () => {
 
     const [selectedImage, setSelectedImage] = useState("");
+    const { profile } = useContext(ProfileContext);
+
+    // const gallery = profile?.gallery || [];
+    // const midpoint = Math.ceil(gallery.length / 2);
+    // const firstHalf = gallery.slice(0, midpoint);
+    // const secondHalf = gallery.slice(midpoint);
+
     return (
         <section id="gallery" className="w-full py-12 md:py-24 lg:py-32 bg-orange-400">
             <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-6">
@@ -23,105 +37,43 @@ const GallerySection = () => {
 
             <div className="col-span-3 lg:col-span-4 lg:border-l mt-6">
                 <div className="h-full px-4 py-6 lg:px-8">
-                    <div className="relative">
-                        <ScrollArea>
-                            <div className="flex space-x-4 pb-4 max-w-[90vw]">
-                                {[1, 2].map((element) => (
-                                    <>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
+                    <Carousel 
+                        plugins={[
+                            AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true },)
+                        ]}
+                        carouselOptions={{ loop: true, }}
+                    >
+                        <CarouselMainContainer className="flex space-x-4 px-4 max-w-[90vw] mr-10">
+                            {profile?.gallery && profile.gallery.map((image) => (
+                                <div key={image} className="overflow-hidden rounded-md h-60 min-w-60">
+                                    <SliderMainItem key={image} className=" flex items-center justify-center bg-transparent h-60 max-w-full rounded-lg">
+                                        <div key={image} className="">
                                             <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IzpgYG-3SFAI4N5-FCeLlUGRLZsSgrfK9g&s"
+                                                src={image}
                                                 alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IzpgYG-3SFAI4N5-FCeLlUGRLZsSgrfK9g&s")}
+                                                className="h-60 min-w-60 object-cover transition-all hover:scale-105 rounded-lg"
+                                                onClick={() => setSelectedImage(image)}
                                             />
                                         </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://samparkbharat.com/assets/uploads/product-image/1711695228-Screenshot_2024-03-29-12-20-18-30_6012fa4d4ddec268fc5c7112cbb265e7.jpg"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://samparkbharat.com/assets/uploads/product-image/1711695228-Screenshot_2024-03-29-12-20-18-30_6012fa4d4ddec268fc5c7112cbb265e7.jpg")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1NB1yvd3bCr3QSltXnWjOB08skGgui3keWiEWFaGGg2TsRZ9F9X-BA_93Xn2HS3DdKk&usqp=CAU"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1NB1yvd3bCr3QSltXnWjOB08skGgui3keWiEWFaGGg2TsRZ9F9X-BA_93Xn2HS3DdKk&usqp=CAU")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPUaVscFGXy_Adtd-CL2YkDr3Ydwz50290b1tdF4qF3jPUbryJ45opNCdT-O1KmKm6Io&usqp=CAU"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPUaVscFGXy_Adtd-CL2YkDr3Ydwz50290b1tdF4qF3jPUbryJ45opNCdT-O1KmKm6Io&usqp=CAU")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://samparkbharat.com/assets/uploads/product-image/1711695247-Screenshot_2024-03-29-12-20-06-75_6012fa4d4ddec268fc5c7112cbb265e7.jpg"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://samparkbharat.com/assets/uploads/product-image/1711695247-Screenshot_2024-03-29-12-20-06-75_6012fa4d4ddec268fc5c7112cbb265e7.jpg")}
-                                            />
-                                        </div>
-                                    </>
-                                ))}
-                            </div>
-                            <ScrollBar orientation="horizontal" />
-                        </ScrollArea>
-                    </div>
+                                    </SliderMainItem>
+                                </div>
+                            ))}
+                        </CarouselMainContainer>
+                    </Carousel>
                 </div>
                 <div className="h-full px-4 py-6 lg:px-8">
                     <div className="relative">
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4 max-w-[90vw]">
-                                {[1, 2].map((element) => (
-                                    <>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1NB1yvd3bCr3QSltXnWjOB08skGgui3keWiEWFaGGg2TsRZ9F9X-BA_93Xn2HS3DdKk&usqp=CAU"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO1NB1yvd3bCr3QSltXnWjOB08skGgui3keWiEWFaGGg2TsRZ9F9X-BA_93Xn2HS3DdKk&usqp=CAU")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPUaVscFGXy_Adtd-CL2YkDr3Ydwz50290b1tdF4qF3jPUbryJ45opNCdT-O1KmKm6Io&usqp=CAU"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwPUaVscFGXy_Adtd-CL2YkDr3Ydwz50290b1tdF4qF3jPUbryJ45opNCdT-O1KmKm6Io&usqp=CAU")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IzpgYG-3SFAI4N5-FCeLlUGRLZsSgrfK9g&s"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8IzpgYG-3SFAI4N5-FCeLlUGRLZsSgrfK9g&s")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://samparkbharat.com/assets/uploads/product-image/1711695247-Screenshot_2024-03-29-12-20-06-75_6012fa4d4ddec268fc5c7112cbb265e7.jpg"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://samparkbharat.com/assets/uploads/product-image/1711695247-Screenshot_2024-03-29-12-20-06-75_6012fa4d4ddec268fc5c7112cbb265e7.jpg")}
-                                            />
-                                        </div>
-                                        <div key={element} className="overflow-hidden rounded-md  h-60 min-w-60">
-                                            <img
-                                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uQXoMDlcPUksBFWiFi9E0Na77jeRsWCoq4m5E3kgfDmxpc0SgubnU6O7FsxexOEeBE8&usqp=CAU"
-                                                alt="img"
-                                                className={cn("h-60 min-w-60 object-cover transition-all hover:scale-105")}
-                                                onClick={() => setSelectedImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6uQXoMDlcPUksBFWiFi9E0Na77jeRsWCoq4m5E3kgfDmxpc0SgubnU6O7FsxexOEeBE8&usqp=CAU")}
-                                            />
-                                        </div>
-                                    </>
+                                {profile?.gallery && profile.gallery.map((image) => (
+                                    <div key={image} className="overflow-hidden rounded-md h-60 min-w-60">
+                                        <img
+                                            src={image}
+                                            alt="img"
+                                            className="h-60 min-w-60 object-cover transition-all hover:scale-105"
+                                            onClick={() => setSelectedImage(image)}
+                                        />
+                                    </div>
                                 ))}
                             </div>
                             <ScrollBar orientation="horizontal" />
@@ -138,11 +90,9 @@ const GallerySection = () => {
                                 className="object-contain w-full h-full"
                             />
                         </DialogContent>
-
                     </Dialog>
                 )}
             </div>
-
         </section>
     )
 }
