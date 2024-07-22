@@ -3,17 +3,16 @@ import {
     CarouselMainContainer,
     SliderMainItem,
 } from "@/components/ui/extension-carousel";
-import { useContext, useState } from "react"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { useContext, useState } from "react";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { ScrollArea, ScrollBar } from "./ui/scroll-area";
 import { ProfileContext } from "@/context/MyContext";
 import AutoScroll from "embla-carousel-auto-scroll";
-
+import { Skeleton } from "./ui/skeleton";
 
 const GallerySection = () => {
-
     const [selectedImage, setSelectedImage] = useState("");
-    const { profile } = useContext(ProfileContext);
+    const { profile, loading } = useContext(ProfileContext);
 
     // const gallery = profile?.gallery || [];
     // const midpoint = Math.ceil(gallery.length / 2);
@@ -37,27 +36,33 @@ const GallerySection = () => {
 
             <div className="col-span-3 lg:col-span-4 lg:border-l mt-6">
                 <div className="h-full px-4 py-6 lg:px-8">
-                    <Carousel 
+                    <Carousel
                         plugins={[
                             AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true },)
                         ]}
                         carouselOptions={{ loop: true, }}
                     >
                         <CarouselMainContainer className="flex space-x-4 px-4 max-w-[90vw] mr-10">
-                            {profile?.gallery && profile.gallery.map((image) => (
-                                <div key={image} className="overflow-hidden rounded-md h-60 min-w-60">
-                                    <SliderMainItem key={image} className=" flex items-center justify-center bg-transparent h-60 max-w-full rounded-lg">
-                                        <div key={image} className="">
-                                            <img
-                                                src={image}
-                                                alt="img"
-                                                className="h-60 min-w-60 object-cover transition-all hover:scale-105 rounded-lg"
-                                                onClick={() => setSelectedImage(image)}
-                                            />
-                                        </div>
-                                    </SliderMainItem>
-                                </div>
-                            ))}
+                            {loading ? (
+                                Array.from({ length: 5 }).map((_, index) => (
+                                    <Skeleton key={index} className="overflow-hidden rounded-md h-60 min-w-60" />
+                                ))
+                            ) : (
+                                profile?.gallery && profile.gallery.map((image) => (
+                                    <div key={image} className="overflow-hidden rounded-md h-60 min-w-60">
+                                        <SliderMainItem key={image} className=" flex items-center justify-center bg-transparent h-60 max-w-full rounded-lg">
+                                            <div key={image} className="">
+                                                <img
+                                                    src={image}
+                                                    alt="img"
+                                                    className="h-60 min-w-60 object-cover transition-all hover:scale-105 rounded-lg"
+                                                    onClick={() => setSelectedImage(image)}
+                                                />
+                                            </div>
+                                        </SliderMainItem>
+                                    </div>
+                                ))
+                            )}
                         </CarouselMainContainer>
                     </Carousel>
                 </div>
@@ -65,16 +70,22 @@ const GallerySection = () => {
                     <div className="relative">
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4 max-w-[90vw]">
-                                {profile?.gallery && profile.gallery.map((image) => (
-                                    <div key={image} className="overflow-hidden rounded-md h-60 min-w-60">
-                                        <img
-                                            src={image}
-                                            alt="img"
-                                            className="h-60 min-w-60 object-cover transition-all hover:scale-105"
-                                            onClick={() => setSelectedImage(image)}
-                                        />
-                                    </div>
-                                ))}
+                                {loading ? (
+                                    Array.from({ length: 5 }).map((_, index) => (
+                                        <Skeleton key={index} className="overflow-hidden rounded-md h-60 min-w-60" />
+                                    ))
+                                ) : (
+                                    profile?.gallery && profile.gallery.map((image) => (
+                                        <div key={image} className="overflow-hidden rounded-md h-60 min-w-60">
+                                            <img
+                                                src={image}
+                                                alt="img"
+                                                className="h-60 min-w-60 object-cover transition-all hover:scale-105"
+                                                onClick={() => setSelectedImage(image)}
+                                            />
+                                        </div>
+                                    ))
+                                )}
                             </div>
                             <ScrollBar orientation="horizontal" />
                         </ScrollArea>
@@ -94,7 +105,7 @@ const GallerySection = () => {
                 )}
             </div>
         </section>
-    )
+    );
 }
 
 export default GallerySection;

@@ -27,5 +27,7 @@ export interface IProfile {
 
 export type ProfileContextType = {
     profile: IProfile | null;
+    loading: boolean;
     setProfile: (profile: IProfile | null) => void; 
+    setLoading: (loading: boolean) => void; 
 };
