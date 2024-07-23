@@ -56,9 +56,9 @@ const NewsSection = () => {
                         loading="lazy"
                       />
                       <div className="mt-4 space-y-2">
-                        <h3 className="text-xl font-bold">{item.heading}</h3>
+                        <h3 className="text-xl font-bold">{item.heading.substring(0, 140)}...</h3>
                         <p className="text-muted-foreground">
-                          {item.heading} ...
+                          {item.description.substring(0, 100)}...
                         </p>
                         <a
                           href={item.link}
