@@ -17,6 +17,7 @@ const Home = () => {
                     <Separator className='my-5' />
                     <h2 className='font-bold'>Organization</h2>
                     <h2>Go to: <span className="text-blue-600 underline"><a href="/org/rcpit">https://samparkbharat.vercel.app/org/rcpit</a></span></h2>
+                    <h2>Go to: <span className="text-blue-600 underline"><a href="/org/rcpit">https://samparkbharat.vercel.app/org/milkeshjain</a></span></h2>
 
                     <Separator className='my-5' />
                     <h2 className='font-bold'>Business</h2>
