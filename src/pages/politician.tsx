@@ -1,44 +1,15 @@
-import Header from "../components/Header"
-import Footer from "../components/Footer"
-import ProfileSection from "../components/ProfileSection"
-import NewsSection from "../components/NewsSection"
-import GallerySection from "../components/GallerySection"
-import ContactSection from "../components/ContactSection"
+import Header from "@/components/politician/Header"
+import Footer from "../components/politician/Footer"
+import ProfileSection from "../components/politician/ProfileSection"
+import NewsSection from "../components/politician/NewsSection"
+import GallerySection from "../components/politician/GallerySection"
+import ContactSection from "../components/politician/ContactSection"
 import { Separator } from "../components/ui/separator"
-import { useContext, useEffect } from "react"
-import { ProfileContext } from "@/context/MyContext"
-import { useParams } from "react-router-dom"
-import axios from "axios"
-import { toast } from "sonner"
-
+import useFetchProfile from "@/hooks/useFetchProfile"
 
 export default function Politician() {
 
-  const { slug } = useParams<{ slug: string }>();
-  const { setProfile, setLoading } = useContext(ProfileContext);
-
-  const fetchData = async (slug: string) => {
-    setLoading(true);
-    try {
-      const environment = String(import.meta.env.VITE_API_ENVIRONMENT);
-      const backendAPI = String(import.meta.env.VITE_API_BACKEND);
-      const API = (environment == "local") ? "http://localhost:3000/" : backendAPI;
-      const response = await axios.post(API, { slug });
-      const profileData = response.data;
-      localStorage.setItem("profile", JSON.stringify(profileData)); // Ensure the data is stored as a string
-      setProfile(profileData);
-      setLoading(false);
-    } catch (error) {
-      console.log("Error fetching profile: ", error);
-      toast.error("Internal Server Error");
-    }
-  };
-
-  useEffect(() => {
-    if (slug) {
-      fetchData(slug);
-    }
-  }, [slug]);
+  useFetchProfile();
 
   return (
     <div className="flex flex-col min-h-dvh">

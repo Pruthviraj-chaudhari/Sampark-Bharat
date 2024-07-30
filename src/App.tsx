@@ -1,7 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import Politician from "./pages/politician";
 import ProfileProvider from './context/MyContext';
-import Home from './pages/home';
+import Business from './pages/Business';
+import Organization from './pages/Organization';
+import Politician from './pages/Politician';
+import Home from './pages/Home';
 
 export default function App() {
 
@@ -9,8 +11,11 @@ export default function App() {
     <ProfileProvider>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:slug" element={<Politician />} />
+        <Route path="/politics/:slug" element={<Politician />} />
+        <Route path="/business/:slug" element={<Business />} />
+        <Route path="/org/:slug" element={<Organization />} />
       </Routes>
     </ProfileProvider>
   )
 }
+
