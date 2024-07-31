@@ -16,7 +16,6 @@ const fetchFromAPI = async (endpoint: string, slug: string) => {
         return response.data;
     } catch (error) {
         console.log(`Error fetching ${endpoint}: `, error);
-        toast.error(`Failed to fetch ${endpoint}`);
         return null;
     }
 };
