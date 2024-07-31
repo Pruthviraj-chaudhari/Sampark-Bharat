@@ -14,8 +14,7 @@ const ContactSection = () => {
           </div>
           <h2 className="text-3xl text-orange-400 font-bold tracking-tighter sm:text-4xl md:text-5xl">कार्यालय संपर्क</h2>
           <p className="text-muted-foreground md:text-xl/relaxed">
-            Have a question or want to get involved? Fill out the form below and a member of our team will be in
-            touch.
+            Reach out with your questions, concerns, or suggestions. We believe peoples voice matters.
           </p>
         </div>
         <Card className="border-0 shadow-none">

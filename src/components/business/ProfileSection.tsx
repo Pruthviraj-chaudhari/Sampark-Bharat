@@ -9,8 +9,8 @@ const ProfileSection = () => {
   const { profile, loading } = useContext(ProfileContext);
 
   return (
-    <section id="profile" className="w-full py-4 md:py-24 lg:py-32 bg-[#DBE8F1]">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
+    <section id="profile" className="w-full py-4 md:pt-6 md:pb-24 lg:py-32 bg-[#DBE8F1]">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-6">
         <div className="relative flex justify-center items-center">
           <div className="absolute w-full h-full">
             {loading ? (
@@ -33,7 +33,7 @@ const ProfileSection = () => {
               height={200}
               alt="Profile"
               className="relative rounded-full w-56 h-56 object-scale-down border-4 border-white bg-white"
-              style={{ marginTop: '100px' }}
+              style={{ marginTop: '150px' }}
               loading="lazy"
             />
           )}

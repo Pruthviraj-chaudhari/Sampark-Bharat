@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { useContext } from 'react';
 import { ProfileContext } from '@/context/MyContext';
 import { Skeleton } from '@/components/ui/skeleton';
+import YoutubeSection from '../YoutubeSection';
 
 const NewsSection = () => {
   const { profile, loading } = useContext(ProfileContext);
@@ -16,7 +17,7 @@ const NewsSection = () => {
           <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">Portfolio</div>
           <h2 className="text-blue-600 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Portfolio</h2>
           <p className="text-muted-foreground md:text-xl/relaxed">
-            Stay up-to-date with the latest news, speeches, and events featuring Rajabhau Waje.
+            Discover our latest offerings, innovations, and achievements in the industry.
           </p>
         </div>
       </div>
@@ -75,6 +76,27 @@ const NewsSection = () => {
             )}
           </CarouselContent>
         </Carousel>
+      </div>
+
+      <div className="mt-32">
+        {
+          (profile?.youtube && profile?.youtube.length > 0) && (
+            <>
+              <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-6">
+                <div className="space-y-4">
+                  <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
+                    YouTube
+                  </div>
+                  <h2 className=" text-blue-600 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">YouTube</h2>
+                  <p className="text-muted-foreground md:text-xl/relaxed">
+                  Explore our latest videos for insights, updates, and stories that drive our brand forward.
+                  </p>
+                </div>
+              </div>
+              <YoutubeSection />
+            </>
+          )
+        }
       </div>
     </section>
   );

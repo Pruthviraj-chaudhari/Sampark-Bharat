@@ -9,8 +9,8 @@ const ProfileSection = () => {
   const { profile, loading } = useContext(ProfileContext);
 
   return (
-    <section id="profile" className="w-full py-4 md:py-24 lg:py-32 bg-orange-400">
-      <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
+    <section id="profile" className="w-full py-4 md:pt-6 md:pb-24 lg:py-32 bg-orange-400">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-6">
         <div className="relative flex justify-center items-center">
           <div className="absolute w-full h-full">
             {loading ? (
@@ -32,8 +32,8 @@ const ProfileSection = () => {
               width={200}
               height={200}
               alt="Profile"
-              className="relative rounded-full w-56 h-56 object-cover border-4 border-white"
-              style={{ marginTop: '100px' }}
+              className="relative rounded-full w-56 h-56 object-scale-down border-4 border-white bg-white"
+              style={{ marginTop: '150px' }}
               loading="lazy"
             />
           )}
@@ -66,7 +66,7 @@ const ProfileSection = () => {
               {loading ? (
                 <Skeleton className="w-24 h-4 rounded" />
               ) : (
-                <span className="cursor-pointer hover:text-primary transition-colors">
+                <span className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
                   {profile?.location}
                 </span>
               )}
@@ -76,7 +76,7 @@ const ProfileSection = () => {
               {loading ? (
                 <Skeleton className="w-24 h-4 rounded" />
               ) : (
-                <span className="cursor-pointer hover:text-primary transition-colors">
+                <span className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
                   {profile?.contact}
                 </span>
               )}
@@ -86,7 +86,7 @@ const ProfileSection = () => {
               {loading ? (
                 <Skeleton className="w-24 h-4 rounded" />
               ) : (
-                <span className="cursor-pointer hover:text-primary transition-colors">
+                <span className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
                   {profile?.email}
                 </span>
               )}

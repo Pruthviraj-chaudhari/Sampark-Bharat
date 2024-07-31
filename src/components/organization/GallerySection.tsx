@@ -28,13 +28,13 @@ const GallerySection = () => {
                     </div>
                     <h2 className=" text-white text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Gallery</h2>
                     <p className="text-white md:text-xl/relaxed">
-                        Explore a collection of photos showcasing our organization's work and culture.
+                        Explore our visual stories and see the highlights from our events and activities.
                     </p>
                 </div>
             </div>
 
-            <div className="col-span-3 lg:col-span-4 lg:border-l mt-6">
-                <div className="h-full px-4 py-6 lg:px-8">
+            <div className="container px-4 md:px-6 col-span-3 lg:col-span-4 mt-6">
+                <div className="h-full py-6">
                     <Carousel
                         plugins={[
                             AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true },)
@@ -65,7 +65,7 @@ const GallerySection = () => {
                         </CarouselMainContainer>
                     </Carousel>
                 </div>
-                <div className="h-full px-4 py-6 lg:px-8">
+                <div className="h-full py-6">
                     <div className="relative">
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4 max-w-[90vw]">

@@ -34,8 +34,8 @@ const GallerySection = () => {
                 </div>
             </div>
 
-            <div className="col-span-3 lg:col-span-4 lg:border-l mt-6">
-                <div className="h-full px-4 py-6 lg:px-8">
+            <div className="container px-4 md:px-6 col-span-3 lg:col-span-4 mt-6">
+                <div className="h-full py-6">
                     <Carousel
                         plugins={[
                             AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true },)
@@ -66,7 +66,7 @@ const GallerySection = () => {
                         </CarouselMainContainer>
                     </Carousel>
                 </div>
-                <div className="h-full px-4 py-6 lg:px-8">
+                <div className="h-full py-6">
                     <div className="relative">
                         <ScrollArea>
                             <div className="flex space-x-4 pb-4 max-w-[90vw]">

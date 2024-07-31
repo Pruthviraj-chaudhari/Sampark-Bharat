@@ -23,6 +23,7 @@ export interface IProfile {
     website: string;
     gallery: string[];
     news: INewsArticle[];
+    youtube: string[] | null;
 }
 
 export type ProfileContextType = {

@@ -3,36 +3,80 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { ProfileContext } from '@/context/MyContext';
 import { toast } from 'sonner';
+import { IProfile } from '@/@types/profile';
 
+
+// Utility function to fetch data from an API
+const fetchFromAPI = async (endpoint: string, slug: string) => {
+    try {
+        const environment = String(import.meta.env.VITE_API_ENVIRONMENT);
+        const backendAPI = String(import.meta.env.VITE_API_BACKEND);
+        const API = environment === 'local' ? 'http://localhost:3000' : backendAPI;
+        const response = await axios.get(`${API}/${endpoint}/${slug}`);
+        return response.data;
+    } catch (error) {
+        console.log(`Error fetching ${endpoint}: `, error);
+        toast.error(`Failed to fetch ${endpoint}`);
+        return null;
+    }
+};
+
+// Custom hook to fetch profile data
 const useFetchProfile = () => {
     const { slug } = useParams<{ slug: string }>();
     const { setProfile, setLoading } = useContext(ProfileContext);
 
     useEffect(() => {
-        const fetchData = async (slug: string) => {
-            setLoading(true);
-            try {
-                const environment = String(import.meta.env.VITE_API_ENVIRONMENT);
-                const backendAPI = String(import.meta.env.VITE_API_BACKEND);
-                const API = environment === 'local' ? 'http://localhost:3000/' : backendAPI;
-                const response = await axios.post(API, { slug });
-                const profileData = response.data;
-                localStorage.setItem('profile', JSON.stringify(profileData)); // Ensure the data is stored as a string
-                setProfile(profileData);
-                setLoading(false);
-            } catch (error) {
-                console.log('Error fetching profile: ', error);
-                toast.error('Internal Server Error');
-                setLoading(false);
+        const fetchProfileData = async () => {
+            if (slug) {
+                setLoading(true);
+                try {
+                    // Fetch all sections concurrently
+                    const [profileText, profilePhoto, backgroundPhoto, news, gallery, youtube] = await Promise.all([
+                        fetchFromAPI('getprofile', slug),
+                        fetchFromAPI('getprofilephoto', slug),
+                        fetchFromAPI('getbackgroundphoto', slug),
+                        fetchFromAPI('getnews', slug),
+                        fetchFromAPI('getgallery', slug),
+                        fetchFromAPI('getyoutube', slug),
+                    ]);
+
+                    const updatedProfileData: IProfile = {
+                        id: 0, 
+                        profilePhoto: profilePhoto || '',
+                        backgroundPhoto: backgroundPhoto || '',
+                        name: profileText?.name || '',
+                        position: profileText?.position || '',
+                        description: profileText?.description || '',
+                        location: profileText?.location || '',
+                        contact: profileText?.contact || '',
+                        email: profileText?.email || '',
+                        whatsapp: profileText?.whatsapp || '',
+                        facebook: profileText?.facebook || '',
+                        instagram: profileText?.instagram || '',
+                        twitter: profileText?.twitter || '',
+                        linkedin: profileText?.linkedin || '',
+                        website: profileText?.website || '',
+                        gallery: gallery || [],
+                        news: news || [],
+                        youtube: youtube || [],
+                    };
+
+                    localStorage.setItem('profile', JSON.stringify(updatedProfileData));
+                    setProfile(updatedProfileData);
+                } catch (error) {
+                    console.log('Error fetching profile sections: ', error);
+                    toast.error('Internal Server Error');
+                } finally {
+                    setLoading(false);
+                }
             }
         };
 
-        if (slug) {
-            fetchData(slug);
-        }
+        fetchProfileData();
     }, [slug, setProfile, setLoading]);
 
-    return null; // Return value is optional, depending on your use case
+    return null;
 };
 
 export default useFetchProfile;
