@@ -4,6 +4,7 @@ import { LuLink } from "react-icons/lu";
 import { useContext } from "react";
 import { ProfileContext } from "@/context/MyContext";
 import { Skeleton } from "@/components/ui/skeleton";
+import Balancer from "react-wrap-balancer";
 
 const ProfileSection = () => {
   const { profile, loading } = useContext(ProfileContext);
@@ -42,23 +43,23 @@ const ProfileSection = () => {
           {loading ? (
             <Skeleton className="w-3/4 h-8 rounded" />
           ) : (
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            <Balancer className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
               {profile?.name}
-            </h2>
+            </Balancer>
           )}
           {loading ? (
             <Skeleton className="w-1/2 h-6 rounded" />
           ) : (
-            <span className="text-lg text-gray-600 font-bold tracking-wider">
+            <Balancer className="text-lg text-gray-600 font-bold tracking-wider">
               {profile?.position}
-            </span>
+            </Balancer>
           )}
           {loading ? (
             <Skeleton className="w-full h-24 rounded" />
           ) : (
-            <p className="text-gray-600 md:text-xl leading-relaxed">
+            <Balancer className="text-gray-600 md:text-xl leading-relaxed">
               {profile?.description}
-            </p>
+            </Balancer>
           )}
           <div className="flex flex-col md:flex-row items-start md:items-center gap-4">
             <div className="flex items-center gap-2">
@@ -66,9 +67,9 @@ const ProfileSection = () => {
               {loading ? (
                 <Skeleton className="w-24 h-4 rounded" />
               ) : (
-                <span className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
+                <Balancer className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
                   {profile?.location}
-                </span>
+                </Balancer>
               )}
             </div>
             <div className="flex items-center gap-2">
@@ -76,9 +77,9 @@ const ProfileSection = () => {
               {loading ? (
                 <Skeleton className="w-24 h-4 rounded" />
               ) : (
-                <span className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
+                <Balancer className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
                   {profile?.contact}
-                </span>
+                </Balancer>
               )}
             </div>
             <div className="flex items-center gap-2">
@@ -86,9 +87,9 @@ const ProfileSection = () => {
               {loading ? (
                 <Skeleton className="w-24 h-4 rounded" />
               ) : (
-                <span className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
+                <Balancer className="cursor-pointer text-gray-700 hover:text-primary transition-colors">
                   {profile?.email}
-                </span>
+                </Balancer>
               )}
             </div>
           </div>

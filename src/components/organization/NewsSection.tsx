@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import { ProfileContext } from '@/context/MyContext';
 import { Skeleton } from '@/components/ui/skeleton';
 import YoutubeSection from '../YoutubeSection';
+import Balancer from 'react-wrap-balancer';
 
 const NewsSection = () => {
   const { profile, loading } = useContext(ProfileContext);
@@ -16,9 +17,9 @@ const NewsSection = () => {
         <div className="space-y-4">
           <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">News</div>
           <h2 className="text-slate-900/90 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">News</h2>
-          <p className="text-muted-foreground md:text-xl/relaxed">
+          <Balancer className="text-muted-foreground md:text-xl/relaxed">
             Stay informed with our latest updates, announcements, and achievements.
-          </p>
+          </Balancer>
         </div>
       </div>
       <div className="container px-4 md:px-10 mt-8">
@@ -88,9 +89,9 @@ const NewsSection = () => {
                     YouTube
                   </div>
                   <h2 className=" text-slate-900/90 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">YouTube</h2>
-                  <p className="text-muted-foreground md:text-xl/relaxed">
+                  <Balancer className="text-muted-foreground md:text-xl/relaxed">
                     Watch our latest videos to see our work in action and learn more about our mission.
-                  </p>
+                  </Balancer>
                 </div>
               </div>
               <YoutubeSection />

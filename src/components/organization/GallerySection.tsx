@@ -9,6 +9,7 @@ import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { ProfileContext } from "@/context/MyContext";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Skeleton } from "@/components/ui/skeleton";
+import Balancer from "react-wrap-balancer";
 
 const GallerySection = () => {
     const [selectedImage, setSelectedImage] = useState("");
@@ -27,9 +28,9 @@ const GallerySection = () => {
                         Gallery
                     </div>
                     <h2 className=" text-white text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Gallery</h2>
-                    <p className="text-white md:text-xl/relaxed">
+                    <Balancer className="text-white md:text-xl/relaxed">
                         Explore our visual stories and see the highlights from our events and activities.
-                    </p>
+                    </Balancer>
                 </div>
             </div>
 

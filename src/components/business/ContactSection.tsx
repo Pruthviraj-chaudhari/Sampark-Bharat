@@ -3,6 +3,7 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
+import Balancer from "react-wrap-balancer"
 
 const ContactSection = () => {
   return (
@@ -13,9 +14,9 @@ const ContactSection = () => {
             Contact
           </div>
           <h2 className="text-3xl text-blue-600 font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Us</h2>
-          <p className="text-muted-foreground md:text-xl/relaxed">
-          Get in touch with us to learn more about our services and how we can assist you.
-          </p>
+          <Balancer className="text-muted-foreground md:text-xl/relaxed">
+            Get in touch with us to learn more about our services and how we can assist you.
+          </Balancer>
         </div>
         <Card className="border-0 shadow-none">
           <CardContent>
