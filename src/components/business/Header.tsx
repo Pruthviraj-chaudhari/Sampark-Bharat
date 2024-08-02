@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { RiContactsLine } from "react-icons/ri"
-import ShareProfile from "../ShareProfile"
+import ShareProfile from "../common/ShareProfile"
 
 const Header = () => {
     return (
@@ -11,7 +11,7 @@ const Header = () => {
                 </a>
                 <div className="flex gap-2">
                     <ShareProfile color="blue-600" />
-                    <a href="/create-vcard">
+                    <a href="https://samparkbharat.com/auth/register" target="_blank">
                         <Button className="border-2 border-blue-600 hover:bg-blue-600 hover:text-white" variant={"outline"}> <span className="hidden md:inline">Get Your vCard</span> <RiContactsLine className=" ml-1 w-4 h-4" /></Button>
                     </a>
                 </div>

@@ -5,18 +5,26 @@ export interface INewsArticle {
     link: string;
 }
 
+export interface IFooterLinks {
+    title: string;
+    link: string;
+}
+
 export interface IProfile {
     id: number;
+    logo: string;
     profilePhoto: string;
     backgroundPhoto: string;
     name: string;
     position: string;
     description: string;
     location: string;
+    address: string;
     contact: string;
     email: string;
     whatsapp: string;
     facebook: string;
+    facebookPage: string;
     instagram: string;
     twitter: string;
     linkedin: string;
@@ -24,6 +32,9 @@ export interface IProfile {
     gallery: string[];
     news: INewsArticle[];
     youtube: string[] | null;
+    youtubeEmbedPlaylist: string;
+    googleMap: string;
+    footerLinks: IFooterLinks[];
 }
 
 export type ProfileContextType = {

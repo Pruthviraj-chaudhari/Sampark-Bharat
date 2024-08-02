@@ -42,23 +42,29 @@ const useFetchProfile = () => {
 
                     const updatedProfileData: IProfile = {
                         id: 0, 
+                        logo: profileText.logo || '/logo.png',
                         profilePhoto: profilePhoto || '',
                         backgroundPhoto: backgroundPhoto || '',
                         name: profileText?.name || '',
                         position: profileText?.position || '',
                         description: profileText?.description || '',
                         location: profileText?.location || '',
+                        address: profileText?.address || '',
                         contact: profileText?.contact || '',
                         email: profileText?.email || '',
                         whatsapp: profileText?.whatsapp || '',
                         facebook: profileText?.facebook || '',
+                        facebookPage: profileText?.facebookPage || '',
                         instagram: profileText?.instagram || '',
                         twitter: profileText?.twitter || '',
                         linkedin: profileText?.linkedin || '',
                         website: profileText?.website || '',
+                        youtubeEmbedPlaylist: profileText.youtubeEmbedPlaylist || '',
                         gallery: gallery || [],
                         news: news || [],
                         youtube: youtube || [],
+                        googleMap: profileText?.googleMap,
+                        footerLinks: profileText?.footerLinks || [],
                     };
 
                     localStorage.setItem('profile', JSON.stringify(updatedProfileData));

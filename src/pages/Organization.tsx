@@ -4,6 +4,8 @@ import GallerySection from "@/components/organization/GallerySection"
 import Header from "@/components/organization/Header"
 import NewsSection from "@/components/organization/NewsSection"
 import ProfileSection from "@/components/organization/ProfileSection"
+import SocialMediaSection from "@/components/organization/SocialMediaSection"
+import ScrollToTopButton from "@/components/common/ScrollToTop"
 import { Separator } from "@/components/ui/separator"
 import useFetchProfile from "@/hooks/useFetchProfile"
 
@@ -18,12 +20,13 @@ const Organization = () => {
         <ProfileSection />
         <Separator className={`mx-auto w-14 h-3  bg-slate-900 rounded-full my-4`} />
         <NewsSection />
-        <Separator className={`mx-auto w-14 h-3  bg-slate-900 rounded-full my-4`} />
+        <SocialMediaSection />
         <GallerySection />
         <Separator className={`mx-auto w-14 h-3  bg-slate-900 rounded-full my-4`} />
         <ContactSection />
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   )
 }
