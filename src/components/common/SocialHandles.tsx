@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { useContext } from "react";
 import { ProfileContext } from "@/context/MyContext";
-// import { TwitterTimelineEmbed } from "react-twitter-embed";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { Skeleton } from "../ui/skeleton";
 // import { IGEmbed } from "./IGEmbed";
 import { FacebookProvider, Page } from "react-facebook";
@@ -36,7 +36,7 @@ const SocialHandles = () => {
                             </Card>
                         )
                     )}
-                    {/* {loading ? (
+                   {loading ? (
                         <Card className="overflow-hidden">
                             <Skeleton className="w-full h-600" />
                         </Card>
@@ -47,7 +47,7 @@ const SocialHandles = () => {
                             </Card>
                         )
                     )}
-                    {loading ? (
+                     {/* {loading ? (
                         <Card className="overflow-hidden">
                             <Skeleton className="w-328 h-328" />
                         </Card>
@@ -91,20 +91,20 @@ const SocialHandles = () => {
 
 export default SocialHandles;
 
-// const TwitterProfile = ({ url }: { url: string }) => {
-//     const parsedUrl = new URL(url);
-//     const pathnameParts = parsedUrl.pathname.split("/");
-//     const screenName = pathnameParts[1];
+const TwitterProfile = ({ url }: { url: string }) => {
+    const parsedUrl = new URL(url);
+    const pathnameParts = parsedUrl.pathname.split("/");
+    const screenName = pathnameParts[1];
 
-//     return (
-//         <TwitterTimelineEmbed
-//             sourceType="profile"
-//             screenName={screenName}
-//             options={{ height: "700px" }}
-//             autoHeight={true}
-//         />
-//     );
-// };
+    return (
+        <TwitterTimelineEmbed
+            sourceType="profile"
+            screenName={screenName}
+            options={{ height: "700px" }}
+            autoHeight={true}
+        />
+    );
+};
 
 
 
