@@ -4,7 +4,7 @@ import { ProfileContext } from "@/context/MyContext";
 import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { Skeleton } from "../ui/skeleton";
 import { IGEmbed } from "./IGEmbed";
-import { FacebookProvider, Page } from "react-facebook";
+// import { FacebookProvider, Page } from "react-facebook";
 
 const SocialHandles = () => {
     const { profile, loading } = useContext(ProfileContext);
@@ -22,16 +22,16 @@ const SocialHandles = () => {
                         profile?.facebookPage && (
                             <Card className="overflow-hidden w-full min-h-[600px]">
                                 <div className="flex justify-center">
-                                    {/* <iframe
+                                    <iframe
                                             src={`https://www.facebook.com/plugins/page.php?href=${profile.facebookPage}&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=${appId}`}
                                             width="500"
                                             height="500"
                                             style={{ border: "none", overflow: "hidden" }}
                                             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> 
-                                        </iframe> */}
-                                    <FacebookProvider appId={appId}>
+                                        </iframe>
+                                    {/* <FacebookProvider appId={appId}>
                                         <Page href={profile.facebookPage} width="380" height="600" showFacepile tabs="timeline" />
-                                    </FacebookProvider>
+                                    </FacebookProvider> */}
                                 </div>
                             </Card>
                         )
