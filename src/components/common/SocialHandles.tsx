@@ -8,34 +8,12 @@ import { IGEmbed } from "./IGEmbed";
 
 const SocialHandles = () => {
     const { profile, loading } = useContext(ProfileContext);
-    const appId = String(import.meta.env.VITE_API_APPID);
+    // const appId = String(import.meta.env.VITE_API_APPID);
 
     return (
         <div className="container px-4 md:px-10 mt-8">
             <div className="container mx-auto px-4 py-8">
                 <div className="services-padding grid grid-cols-1 md:grid-cols-2 gap-8">
-                    {loading ? (
-                        <Card className="overflow-hidden">
-                            <Skeleton className="w-full h-500" />
-                        </Card>
-                    ) : (
-                        profile?.facebookPage && (
-                            <Card className="overflow-hidden w-full min-h-[600px]">
-                                <div className="flex justify-center">
-                                    <iframe
-                                            src={`https://www.facebook.com/plugins/page.php?href=${profile.facebookPage}&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=${appId}`}
-                                            width="500"
-                                            height="500"
-                                            style={{ border: "none", overflow: "hidden" }}
-                                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> 
-                                        </iframe>
-                                    {/* <FacebookProvider appId={appId}>
-                                        <Page href={profile.facebookPage} width="380" height="600" showFacepile tabs="timeline" />
-                                    </FacebookProvider> */}
-                                </div>
-                            </Card>
-                        )
-                    )}
                     {loading ? (
                         <Card className="overflow-hidden">
                             <Skeleton className="w-full h-600" />
@@ -105,3 +83,28 @@ const TwitterProfile = ({ url }: { url: string }) => {
         />
     );
 };
+
+
+
+// {loading ? (
+//     <Card className="overflow-hidden">
+//         <Skeleton className="w-full h-500" />
+//     </Card>
+// ) : (
+//     profile?.facebookPage && (
+//         <Card className="overflow-hidden w-full min-h-[600px]">
+//             <div className="flex justify-center">
+//                 <iframe
+//                         src={`https://www.facebook.com/plugins/page.php?href=${profile.facebookPage}&tabs=timeline&width=500&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=${appId}`}
+//                         width="500"
+//                         height="500"
+//                         style={{ border: "none", overflow: "hidden" }}
+//                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"> 
+//                     </iframe>
+//                 {/* <FacebookProvider appId={appId}>
+//                     <Page href={profile.facebookPage} width="380" height="600" showFacepile tabs="timeline" />
+//                 </FacebookProvider> */}
+//             </div>
+//         </Card>
+//     )
+// )}
