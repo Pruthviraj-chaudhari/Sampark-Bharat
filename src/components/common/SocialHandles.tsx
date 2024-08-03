@@ -1,10 +1,10 @@
 import { Card } from "@/components/ui/card";
 import { useContext } from "react";
 import { ProfileContext } from "@/context/MyContext";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
 import { Skeleton } from "../ui/skeleton";
-// import { IGEmbed } from "./IGEmbed";
+import { IGEmbed } from "./IGEmbed";
 import { FacebookProvider, Page } from "react-facebook";
+import { TwitterTimelineEmbed } from "./TwitterEmbed";
 
 const SocialHandles = () => {
     const { profile, loading } = useContext(ProfileContext);
@@ -36,7 +36,7 @@ const SocialHandles = () => {
                             </Card>
                         )
                     )}
-                   {loading ? (
+                    {loading ? (
                         <Card className="overflow-hidden">
                             <Skeleton className="w-full h-600" />
                         </Card>
@@ -47,7 +47,7 @@ const SocialHandles = () => {
                             </Card>
                         )
                     )}
-                     {/* {loading ? (
+                    {loading ? (
                         <Card className="overflow-hidden">
                             <Skeleton className="w-328 h-328" />
                         </Card>
@@ -82,7 +82,7 @@ const SocialHandles = () => {
                                 </div>
                             </Card>
                         )
-                    )} */}
+                    )}
                 </div>
             </div>
         </div>
