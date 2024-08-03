@@ -97,7 +97,6 @@ const NewsSection = () => {
               </div>
               <YoutubeSection />
             </section>
-            <Separator className={`mx-auto w-14 h-3  bg-orange-400 rounded-full my-4`} />
           </>
         )
       }

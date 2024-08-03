@@ -10,6 +10,7 @@ const SocialMediaSection = () => {
     return (
         (profile && (profile?.facebookPage != '' || profile?.twitter != '' || profile?.instagram != '' || profile?.youtubeEmbedPlaylist != '')) && (
             <>
+                <Separator className={`mx-auto w-14 h-3  bg-blue-600 rounded-full my-4`} />
                 <section id="socialmedia" className="w-full py-12 md:py-24 lg:py-32 bg-white">
                     <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-6">
                         <div className="space-y-4">
