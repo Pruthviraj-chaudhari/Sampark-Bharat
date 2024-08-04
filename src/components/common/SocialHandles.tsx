@@ -30,7 +30,7 @@ const SocialHandles = () => {
                                         allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                                     </iframe> */}
                                     <FacebookProvider appId={appId}>
-                                        <Page href={profile.facebookPage} width="380" height="600" showFacepile tabs="timeline" />
+                                        <Page href={profile.facebookPage} width="300" height="600" showFacepile tabs="timeline" />
                                     </FacebookProvider>
                                 </div>
                             </Card>
