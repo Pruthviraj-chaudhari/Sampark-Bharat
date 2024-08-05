@@ -4,8 +4,11 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 import Balancer from "react-wrap-balancer"
+import { useContext } from "react"
+import { ProfileContext } from "@/context/MyContext"
 
 const ContactSection = () => {
+  const { profile } = useContext(ProfileContext);
   return (
     <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
@@ -13,7 +16,11 @@ const ContactSection = () => {
           <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
             Contact
           </div>
-          <h2 className="text-3xl text-orange-400 font-bold tracking-tighter sm:text-4xl md:text-5xl">कार्यालय संपर्क</h2>
+          <h2 className="text-3xl text-orange-400 font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            {
+              (profile?.language === "Marathi") ? "कार्यालय संपर्क" : "Office Contact"
+            }
+          </h2>
           <Balancer className="text-muted-foreground md:text-xl/relaxed">
             Reach out with your questions, concerns, or suggestions. We believe peoples voice matters.
           </Balancer>

@@ -6,6 +6,7 @@ import NewsSection from "@/components/business/NewsSection"
 import ProfileSection from "@/components/business/ProfileSection"
 import SocialMediaSection from "@/components/business/SocialMediaSection"
 import TestimonialSection from "@/components/business/TestimonialSection"
+import YouTubeSection from "@/components/business/YouTubeSection"
 import ScrollToTopButton from "@/components/common/ScrollToTop"
 import { Separator } from "@/components/ui/separator"
 import useFetchProfile from "@/hooks/useFetchProfile"
@@ -21,6 +22,7 @@ const Business = () => {
         <ProfileSection />
         <Separator className={`mx-auto w-14 h-3  bg-blue-600 rounded-full my-4`} />
         <NewsSection />
+        <YouTubeSection />
         <SocialMediaSection />
         <GallerySection />
         <Separator className={`mx-auto w-14 h-3  bg-blue-600 rounded-full my-4`} />

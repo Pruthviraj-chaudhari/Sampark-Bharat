@@ -15,7 +15,11 @@ const SocialMediaSection = () => {
                     <div className="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-6">
                         <div className="space-y-4">
                             <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">Social Media</div>
-                            <h2 className="text-blue-600 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Social Media</h2>
+                            <h2 className="text-blue-600 text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                                {
+                                    (profile?.language === "Marathi") ? "सोशल मीडिया" : "Social Media"
+                                }
+                            </h2>
                             <Balancer className="text-muted-foreground md:text-xl/relaxed">
                                 Stay informed with our latest updates, announcements, and achievements.
                             </Balancer>

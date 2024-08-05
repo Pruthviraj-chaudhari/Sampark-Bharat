@@ -50,6 +50,7 @@ const useFetchProfile = () => {
                         position: profileText?.position || '',
                         description: profileText?.description || '',
                         location: profileText?.location || '',
+                        language: profileText?.language || 'English',
                         address: profileText?.address || '',
                         contact: profileText?.contact || '',
                         email: profileText?.email || '',

@@ -26,6 +26,7 @@ export interface IProfile {
     position: string;
     description: string;
     location: string;
+    language: string;
     address: string;
     contact: string;
     email: string;

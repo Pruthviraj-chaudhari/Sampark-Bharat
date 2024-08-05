@@ -27,7 +27,11 @@ const GallerySection = () => {
                     <div className="inline-block rounded-lg bg-white px-3 py-1 text-sm text-slate-900">
                         Gallery
                     </div>
-                    <h2 className=" text-white text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Gallery</h2>
+                    <h2 className=" text-white text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                        {
+                            (profile?.language === "Marathi") ? "फोटो गॅलरी" : "Gallery"
+                        }
+                    </h2>
                     <Balancer className="text-white md:text-xl/relaxed">
                         Explore our visual stories and see the highlights from our events and activities.
                     </Balancer>
