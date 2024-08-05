@@ -79,12 +79,13 @@ export const theme = {
       "accordion-down": "accordion-down 0.2s ease-out",
       "accordion-up": "accordion-up 0.2s ease-out",
       "scroll": "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
+      "shimmer": "shimmer 2s linear infinite",
     },
   },
 };
 export const plugins = [require("tailwindcss-animate"), addVariablesForColors];
 
-function addVariablesForColors({ addBase, theme }: any) {
+function addVariablesForColors({ addBase, theme }) {
   let allColors = flattenColorPalette(theme("colors"));
   let newVars = Object.fromEntries(
     Object.entries(allColors).map(([key, val]) => [`--${key}`, val])

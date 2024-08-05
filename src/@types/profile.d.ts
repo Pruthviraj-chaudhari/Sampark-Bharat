@@ -44,6 +44,8 @@ export interface IProfile {
     googleMap: string;
     footerLinks: IFooterLinks[];
     testimonials: Testimonial[];
+    isExpired: boolean,
+    visitorsCount: number,
 }
 
 export type ProfileContextType = {

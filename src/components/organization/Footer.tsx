@@ -58,7 +58,7 @@ export default function Footer() {
                                     Visitors Count <FaEye />
                                 </CardDescription>
                                 <CardTitle className="text-4xl">
-                                    <NumberTicker className="text-slate-900" value={45688} />
+                                    <NumberTicker className="text-slate-900" value={profile?.visitorsCount || 12488} />
                                 </CardTitle>
                             </CardHeader>
                         </Card>

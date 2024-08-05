@@ -109,7 +109,7 @@ const Header = () => {
                         </DialogContent>
                     </Dialog>
 
-                    <a href="/create-vcard">
+                    <a href="https://samparkbharat.com/auth/register" target="_blank">
                         <Button className="border-2 border-orange-400 hover:bg-orange-400" variant={"outline"}> <span className="hidden md:inline">Get Your vCard</span> <RiContactsLine className=" ml-1 w-4 h-4" /></Button>
                     </a>
                 </div>

@@ -1,10 +1,9 @@
 import { useEffect, useContext } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ProfileContext } from '@/context/MyContext';
 import { toast } from 'sonner';
 import { IProfile } from '@/@types/profile';
-
 
 // Utility function to fetch data from an API
 const fetchFromAPI = async (endpoint: string, slug: string) => {
@@ -23,6 +22,7 @@ const fetchFromAPI = async (endpoint: string, slug: string) => {
 // Custom hook to fetch profile data
 const useFetchProfile = () => {
     const { slug } = useParams<{ slug: string }>();
+    const navigate = useNavigate();
     const { setProfile, setLoading } = useContext(ProfileContext);
 
     useEffect(() => {
@@ -30,9 +30,25 @@ const useFetchProfile = () => {
             if (slug) {
                 setLoading(true);
                 try {
-                    // Fetch all sections concurrently
-                    const [profileText, profilePhoto, backgroundPhoto, news, gallery, youtube, testimonials] = await Promise.all([
-                        fetchFromAPI('getprofile', slug),
+                    // Fetch profile data
+                    const profileText = await fetchFromAPI('getprofile', slug);
+
+                     // Check if profile is not found
+                     if (!profileText) {
+                        // Redirect to not found page
+                        navigate('/not-found');
+                        return;
+                    }
+
+                    // Check if profile is expired
+                    if (profileText?.isExpired) {
+                        // Redirect to expired page
+                        navigate('/subscribe');
+                        return;
+                    }
+
+                    // Fetch additional data concurrently
+                    const [profilePhoto, backgroundPhoto, news, gallery, youtube, testimonials] = await Promise.all([
                         fetchFromAPI('getprofilephoto', slug),
                         fetchFromAPI('getbackgroundphoto', slug),
                         fetchFromAPI('getnews', slug),
@@ -68,12 +84,14 @@ const useFetchProfile = () => {
                         googleMap: profileText?.googleMap,
                         footerLinks: profileText?.footerLinks || [],
                         testimonials: testimonials || [],
+                        isExpired: profileText.isExpired,
+                        visitorsCount: profileText.visitorsCount || '12488',
                     };
 
                     localStorage.setItem('profile', JSON.stringify(updatedProfileData));
                     setProfile(updatedProfileData);
                 } catch (error) {
-                    console.log('Error fetching profile sections: ', error);
+                    console.log('Error fetching user profile: ', error);
                     toast.error('Internal Server Error');
                 } finally {
                     setLoading(false);
@@ -82,7 +100,7 @@ const useFetchProfile = () => {
         };
 
         fetchProfileData();
-    }, [slug, setProfile, setLoading]);
+    }, [slug, setProfile, setLoading, navigate]);
 
     return null;
 };
