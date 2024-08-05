@@ -8,6 +8,7 @@ import SocialMediaSection from "@/components/organization/SocialMediaSection"
 import ScrollToTopButton from "@/components/common/ScrollToTop"
 import { Separator } from "@/components/ui/separator"
 import useFetchProfile from "@/hooks/useFetchProfile"
+import TestimonialSection from "@/components/organization/TestimonialSection"
 
 const Organization = () => {
 
@@ -23,6 +24,7 @@ const Organization = () => {
         <SocialMediaSection />
         <GallerySection />
         <Separator className={`mx-auto w-14 h-3  bg-slate-900 rounded-full my-4`} />
+        <TestimonialSection />
         <ContactSection />
       </main>
       <Footer />

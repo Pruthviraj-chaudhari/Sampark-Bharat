@@ -10,6 +10,13 @@ export interface IFooterLinks {
     link: string;
 }
 
+export interface Testimonial  {
+    quote: string;
+    name: string;
+    role: string;
+    imgSrc: string;
+}
+
 export interface IProfile {
     id: number;
     logo: string;
@@ -35,6 +42,7 @@ export interface IProfile {
     youtubeEmbedPlaylist: string;
     googleMap: string;
     footerLinks: IFooterLinks[];
+    testimonials: Testimonial[];
 }
 
 export type ProfileContextType = {

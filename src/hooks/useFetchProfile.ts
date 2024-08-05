@@ -31,13 +31,14 @@ const useFetchProfile = () => {
                 setLoading(true);
                 try {
                     // Fetch all sections concurrently
-                    const [profileText, profilePhoto, backgroundPhoto, news, gallery, youtube] = await Promise.all([
+                    const [profileText, profilePhoto, backgroundPhoto, news, gallery, youtube, testimonials] = await Promise.all([
                         fetchFromAPI('getprofile', slug),
                         fetchFromAPI('getprofilephoto', slug),
                         fetchFromAPI('getbackgroundphoto', slug),
                         fetchFromAPI('getnews', slug),
                         fetchFromAPI('getgallery', slug),
                         fetchFromAPI('getyoutube', slug),
+                        fetchFromAPI('gettestimonials', slug),
                     ]);
 
                     const updatedProfileData: IProfile = {
@@ -65,6 +66,7 @@ const useFetchProfile = () => {
                         youtube: youtube || [],
                         googleMap: profileText?.googleMap,
                         footerLinks: profileText?.footerLinks || [],
+                        testimonials: testimonials || [],
                     };
 
                     localStorage.setItem('profile', JSON.stringify(updatedProfileData));
