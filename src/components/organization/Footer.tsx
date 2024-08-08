@@ -5,6 +5,8 @@ import NumberTicker from "../common/number-ticker";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
 import { useContext } from "react";
 import { ProfileContext } from "@/context/MyContext";
+import { BsArrowRight } from "react-icons/bs";
+import { FooterTooltip } from "../common/FooterTooltip";
 
 export default function Footer() {
 
@@ -51,7 +53,7 @@ export default function Footer() {
                     }
                 </div>
                 <div className="container grid gap-12 md:grid-cols-3">
-                    <div className="flex flex-col gap-2 ">
+                    <div className="flex flex-col gap-2">
                         <Card className="bg-white text-center">
                             <CardHeader className="pb-2">
                                 <CardDescription className="flex font-semibold text-slate-900 justify-center items-center gap-2">
@@ -86,6 +88,27 @@ export default function Footer() {
                         </div>
                     </div>
                 </div>
+
+                {/* New Section for Profile Creation Prompt */}
+                <div className="container mt-12 ">
+                    <div className="flex flex-col items-center bg-gradient-to-br from-slate-500 to-slate-900 p-8 rounded-lg shadow-lg text-center">
+                        <h3 className="text-2xl font-semibold text-white mb-3">
+                            Want a profile like this?
+                        </h3>
+                        <p className="text-gray-200 mb-4 text-lg">
+                            Start your journey with us and build your own unique profile!
+                        </p>
+                        <a
+                            href="/create-profile"
+                            className="inline-flex items-center justify-center bg-slate-900 text-white py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl hover:from-indigo-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                        >
+                            <span className="font-semibold">Create Profile</span>
+                            <BsArrowRight className="ml-2 w-5 h-5" />
+                        </a>
+                        <FooterTooltip />
+                    </div>
+                </div>
+
                 <div className="container mt-8 flex flex-col justify-between gap-6 border-t border-gray-200 pt-6 md:flex-row md:items-center md:gap-2">
                     <div className="flex gap-4">
                         <a href={`https://wa.me/${profile?.whatsapp}`} target="_blank" className="hover:text-white">
