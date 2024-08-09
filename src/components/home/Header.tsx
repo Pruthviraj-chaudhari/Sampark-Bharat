@@ -40,11 +40,11 @@ const Header = () => {
                 </SheetContent>
             </Sheet>
             <a href="#" className="ml-auto mr-0 lg:hidden">
-                <img className="w-36" src="/logo_main.png" alt="Sampark Bharat" />
+                <img className="w-28" src="/transparent.png" alt="Sampark Bharat" />
                 <span className="sr-only">Sampark Bharat</span>
             </a>
             <a href="#" className="mr-6 hidden lg:flex">
-                <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
+                <img className="w-28 mx-4" src="/transparent.png" alt="Sampark Bharat" />
                 <span className="sr-only">Sampark Bharat</span>
             </a>
             <NavigationMenu className="hidden lg:flex">
