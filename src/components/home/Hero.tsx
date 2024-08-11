@@ -33,7 +33,7 @@ export function Hero() {
             </div>
             <Typography
               variant="h1"
-              className="mb-8 leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent"
+              className="mb-8 pb-2 leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent"
             >
               The Ultimate Digital Business Card
             </Typography>
@@ -55,18 +55,18 @@ export function Hero() {
               </button>
               <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
-                <div className="px-4 sm:px-6 md:px-8 py-1 sm:py-2 font-medium bg-white rounded-[8px] md:rounded-[6px] relative group transition duration-200 text-sm sm:text-base md:text-lg text-black hover:text-white hover:bg-transparent">
+                <div className="px-4 sm:px-6 md:px-8 py-1 sm:py-2 font-medium rounded-[8px] md:rounded-[6px] relative group transition duration-200 text-sm sm:text-base md:text-lg text-white bg-transparent">
                   Get Started
                 </div>
               </button>
             </div>
 
           </div>
-          <div className="flex justify-center lg:justify-end lg:mr-20 z-10">
+          <div className="flex justify-center lg:justify-end lg:mr-20 z-10 [mask-image:linear-gradient(to_bottom,transparent,white_0%,white_80%,transparent)]">
             <img
               src="samsung3.png"
               alt="phone"
-              className="max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg w-[20rem] rounded-3xl"
+              className="max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg w-[14rem] md:w-[20rem] rounded-3xl"
             />
           </div>
         </div>
@@ -82,14 +82,24 @@ export function Hero() {
             </h1>
           }
         >
-          <img
-            src={"business3.png"}
-            alt="hero"
-            height={720}
-            width={1400}
-            className="mx-auto rounded-2xl object-cover h-full object-left-top"
-            draggable={false}
-          />
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet="business3.png"
+            />
+            <source
+              media="(max-width: 1023px)"
+              srcSet="ipad.png"
+            />
+            <img
+              src="ipad.png"
+              alt="hero"
+              height={720}
+              width={1400}
+              className="mx-auto rounded-2xl object-cover h-full object-left-top"
+              draggable={false}
+            />
+          </picture>
         </ContainerScroll>
       </div>
 

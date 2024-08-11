@@ -5,6 +5,7 @@ import Header from "@/components/home/Header"
 import Hero from "@/components/home/Hero"
 import Pricing from "@/components/home/Pricing"
 import About from "@/components/home/About"
+import Contact from "@/components/home/Contact"
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Features />
             <Pricing />
             <About />
+            <Contact />
             <Footer />
             <ScrollToTopButton />
         </div>
