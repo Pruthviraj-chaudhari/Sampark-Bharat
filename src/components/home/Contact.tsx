@@ -1,25 +1,21 @@
-import { Typography } from "@material-tailwind/react"
-import { Button } from "../ui/button"
-import { Input } from "../ui/input"
-import { PhoneInput } from "../common/phone-input"
-import { useState } from "react"
+// import { useState } from "react"
 
 const Contact = () => {
 
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        message: "",
-    });
+    // const [form, setForm] = useState({
+    //     name: "",
+    //     email: "",
+    //     message: "",
+    // });
 
-    const handleChange = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+    // const handleChange = (e) => {
+    //     setForm({ ...form, [e.target.name]: e.target.value });
+    // };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission
-    };
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+    //     // Handle form submission
+    // };
 
     return (
         <>
