@@ -1,8 +1,7 @@
 import { Typography } from "@material-tailwind/react";
 import { MoveRightIcon } from "lucide-react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
-import { HeroParallax } from "../ui/hero-parallax";
-import { heroParallax } from "@/lib/data";
+import { AnimatedTabs } from "./AnimatedTabs";
 
 export function Hero() {
   return (
@@ -35,7 +34,7 @@ export function Hero() {
               variant="h1"
               className="mb-8 pb-2 leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent"
             >
-              The Ultimate Digital Business Card
+              The Ultimate Dynamic Digital Profile
             </Typography>
             <Typography
               variant="lead"
@@ -50,7 +49,7 @@ export function Hero() {
               <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
                 <div className="px-4 sm:px-6 md:px-8 py-1 sm:py-2 font-medium bg-white rounded-[8px] md:rounded-[6px] relative group transition duration-200 text-sm sm:text-base md:text-lg text-black hover:text-white hover:bg-transparent">
-                  Try Demo
+                  View Demo
                 </div>
               </button>
               <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
@@ -103,7 +102,23 @@ export function Hero() {
         </ContainerScroll>
       </div>
 
-      <HeroParallax products={heroParallax} />
+      <section id="features" className="py-14 relative">
+        <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 md:px-8">
+          <div className="mx-auto max-w-5xl text-center">
+            <h4 className="text-xl font-bold tracking-tight text-black dark:text-white">
+            Design
+            </h4>
+            <h2 className="text-5xl z-10 h-auto pb-5 font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
+            The Ultimate Profile<br /> Design
+            </h2>
+            <p className="mt-6 text-xl leading-8 text-black/80 dark:text-white">
+              Enhance your connectivity with a <strong>digital presence </strong> to showcase your identity and grow your network.
+            </p>
+          </div>
+
+          <AnimatedTabs />
+        </div>
+      </section>
     </>
   );
 }

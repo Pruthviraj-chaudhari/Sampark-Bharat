@@ -11,7 +11,7 @@ const Contact = () => {
     const [captchaValue, setCaptchaValue] = useState(null);
     const [error, setError] = useState<string | null>(null);
 
-    const handleChange = (e) => {
+    const handleChange = (e:any) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
@@ -19,7 +19,7 @@ const Contact = () => {
         setCaptchaValue(value); // this value is the token returned by reCAPTCHA
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e:any) => {
         e.preventDefault();
         
         // Check if captcha is solved
