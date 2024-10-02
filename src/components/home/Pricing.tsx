@@ -4,13 +4,10 @@ import { Loader } from "lucide-react";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
-import { Switch } from "../ui/switch";
 import { demoPrices } from "@/lib/data";
 
-type Interval = "month" | "year";
 
 const Pricing = () => {
-    const [interval, setInterval] = useState<Interval>("month");
     const [isLoading, setIsLoading] = useState(false);
     const [id, setId] = useState<string | null>(null);
 
@@ -24,7 +21,7 @@ const Pricing = () => {
     return (
         <section id="pricing">
             <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 py-14 md:px-8">
-                <div className="mx-auto max-w-5xl text-center">
+                <div className="mx-auto max-w-5xl text-center mb-5">
                     <h4 className="text-xl font-bold tracking-tight text-black dark:text-white">
                         Pricing
                     </h4>
@@ -38,19 +35,6 @@ const Pricing = () => {
                         packed with the best features for engaging your
                         audience, creating customer loyalty, and driving sales.
                     </p>
-                </div>
-
-                <div className="flex w-full items-center justify-center space-x-2">
-                    <Switch
-                        id="interval"
-                        onCheckedChange={(checked) => {
-                            setInterval(checked ? "year" : "month");
-                        }}
-                    />
-                    <span>Annual</span>
-                    <span className="inline-block whitespace-nowrap rounded-full bg-gradient-to-r from-red-500 to-orange-400 text-white px-2.5 py-1 text-[11px] font-semibold uppercase leading-5 tracking-wide">
-                        30 Days FREE ✨
-                    </span>
                 </div>
 
                 <div className="mx-auto grid w-full flex-col justify-center gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -77,7 +61,7 @@ const Pricing = () => {
                             </div>
 
                             <motion.div
-                                key={`${price.id}-${interval}`}
+                                key={`${price.id}-year`}
                                 initial="initial"
                                 animate="animate"
                                 variants={{
@@ -97,16 +81,20 @@ const Pricing = () => {
                                 }}
                                 className="flex flex-row gap-1"
                             >
-                                <span className="text-4xl font-bold text-black dark:text-white">
-                                    ₹
-                                    {interval === "year"
-                                        ? price.yearlyPrice
-                                        : price.monthlyPrice}
-                                    <span className="text-xs">
-                                        {" "}
-                                        /{interval}
+                                {price.showPrices ?
+                                    <span className="text-4xl font-bold text-black dark:text-white">
+                                        ₹
+                                        {price.yearlyPrice}
+                                        <span className="text-xs">
+                                            {" "}
+                                            /{"year"}
+                                        </span>
+                                    </span> 
+                                    :
+                                   <span className=" w-full text-center whitespace-nowrap rounded-full bg-gradient-to-r from-red-500 to-orange-400 text-white px-2.5 py-2.5 text-[15px] font-semibold uppercase leading-5 tracking-wide">
+                                        Politicians Special ✨
                                     </span>
-                                </span>
+                                }
                             </motion.div>
 
                             <Button
@@ -120,8 +108,8 @@ const Pricing = () => {
                                 <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
                                 {(!isLoading ||
                                     (isLoading && id !== price.id)) && (
-                                    <p>Subscribe</p>
-                                )}
+                                        <p>Contact Us</p>
+                                    )}
 
                                 {isLoading && id === price.id && (
                                     <p>Subscribing</p>
