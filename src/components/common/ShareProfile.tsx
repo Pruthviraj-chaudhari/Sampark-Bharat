@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { CheckIcon, DownloadIcon, LinkedInLogoIcon } from "@radix-ui/react-icons"
 import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa"
-import { useRef, useState } from "react"
+import { useContext, useRef, useState } from "react"
 import { GoShareAndroid } from "react-icons/go";
 import { CopyIcon } from "@radix-ui/react-icons"
 import { QRCode } from 'react-qrcode-logo';
@@ -15,8 +15,13 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog"
 import { toast } from "sonner"
+import { ProfileContext } from "@/context/MyContext"
+import useTheme from "@/hooks/useTheme"
 
-const ShareProfile = ({color}:{color:string}) => {
+const ShareProfile = () => {
+
+    const { profile } = useContext(ProfileContext);
+    const themeClasses = useTheme(profile);
 
     const currentUrl = window.location.href;
     const [copied, setCopied] = useState(false);
@@ -63,9 +68,9 @@ const ShareProfile = ({color}:{color:string}) => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className={`border-2 hover:text-white border-${color} hover:bg-${color}`} variant={"outline"}><span className="hidden md:inline">Share</span> <GoShareAndroid className=" ml-1 w-4 h-4" /></Button>
+                <Button className={`border-2 border-${themeClasses.background.substring(3)} hover:${themeClasses.background} hover:text-white`} variant={"outline"}><span className="hidden md:inline">Share</span> <GoShareAndroid className=" ml-1 w-4 h-4" /></Button>
             </DialogTrigger>
-            <DialogContent className=" max-w-[90vw] md:max-w-[425px]">
+            <DialogContent className=" max-w-[90vw] md:max-w-[425px] bg-white">
                 <div className="flex flex-col items-center justify-center gap-6 py-8">
                     <a href="#" className="flex items-center gap-2">
                         <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />

@@ -86,6 +86,7 @@ const useFetchProfile = () => {
                         testimonials: testimonials || [],
                         isExpired: profileText.isExpired,
                         visitorsCount: profileText.visitorsCount || '12488',
+                        theme: profileText.theme,
                     };
 
                     localStorage.setItem('profile', JSON.stringify(updatedProfileData));

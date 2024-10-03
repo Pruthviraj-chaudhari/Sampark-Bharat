@@ -46,6 +46,7 @@ export interface IProfile {
     testimonials: Testimonial[];
     isExpired: boolean,
     visitorsCount: number,
+    theme: string,
 }
 
 export type ProfileContextType = {

@@ -10,7 +10,7 @@ const Header = () => {
                     <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
                 </a>
                 <div className="flex gap-2">
-                    <ShareProfile color="slate-900" />
+                    <ShareProfile />
                     <a href="https://samparkbharat.com/auth/register" target="_blank">
                         <Button className="border-2 border-slate-900 hover:bg-slate-900 hover:text-white" variant={"outline"}> <span className="hidden md:inline">Get Your vCard</span> <RiContactsLine className=" ml-1 w-4 h-4" /></Button>
                     </a>

@@ -6,6 +6,7 @@ import Politician from './pages/Politician';
 import Home from './pages/Home';
 import SubscribePage from './pages/Subscribe';
 import PageNotFound from './pages/NotFound';
+import Demo from './pages/Demo';
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path="/org/:slug" element={<Organization />} />
         <Route path="/subscribe" element={<SubscribePage />} />
         <Route path="*" element={<PageNotFound />} />
+        <Route path="/demo/:slug" element={<Demo />} />
       </Routes>
     </ProfileProvider>
   )
