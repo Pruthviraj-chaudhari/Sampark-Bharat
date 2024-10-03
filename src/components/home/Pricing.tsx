@@ -99,7 +99,7 @@ const Pricing = () => {
 
                             <Button
                                 className={cn(
-                                    "group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter ",
+                                    "group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter bg-black",
                                     "hover:ring-primary transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-offset-2"
                                 )}
                                 disabled={isLoading}

@@ -2,15 +2,58 @@ import { Typography } from "@material-tailwind/react";
 import { MoveRightIcon } from "lucide-react";
 import { ContainerScroll } from "../ui/container-scroll-animation";
 import { AnimatedTabs } from "./AnimatedTabs";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+
+  const mobilesArrays = [
+    "modi.jpg",
+    "ajit.jpg",
+  ]
+
+  const backgrounds = [
+    "bg-orange-400",
+    "bg-pink-400",
+  ]
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Auto-slide logic using useEffect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex === mobilesArrays.length - 1 ? 0 : prevIndex + 1));
+    }, 3000); // Change slide every 3 seconds
+    return () => clearInterval(interval); // Cleanup the interval on component unmount
+  }, [mobilesArrays.length]);
+
+
+
   return (
     <>
       <div className="relative h-full px-4 sm:px-6 lg:px-8">
-        <div className="absolute inset-0 -z-10">
+
+        {backgrounds.map((bg, index) => (
+          <motion.div
+            key={bg}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: activeIndex === index ? 1 : 0 }}
+            transition={{ duration: 0.5 }}
+            className={`${activeIndex === index ? "block" : "hidden"}`}
+          >
+            <div className="absolute inset-0 -z-10 hidden lg:flex">
+              <div className="absolute inset-0 h-full w-full grid gap-2"></div>
+              <div className={`absolute bottom-auto left-auto right-0 top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full ${bg} opacity-50 blur-[60px] sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]`}></div>
+            </div>
+          </motion.div>
+        ))}
+
+        <div className="absolute inset-0 -z-10 lg:hidden">
           <div className="absolute inset-0 h-full w-full grid gap-2"></div>
-          <div className="absolute bottom-auto left-auto right-0 top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full bg-orange-400 opacity-50 blur-[60px] sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]"></div>
+          <div className={`absolute bottom-auto left-auto right-0 top-0 h-[200px] w-[200px] -translate-x-[30%] translate-y-[20%] rounded-full bg-orange-400 opacity-50 blur-[60px] sm:h-[300px] sm:w-[300px] lg:h-[500px] lg:w-[500px]`}></div>
         </div>
+
+
         <div className="container mx-auto grid items-center gap-8 lg:grid-cols-2">
           <div className="text-center lg:text-left">
             <div className="mb-8 inline-flex items-center rounded-lg border border-dark/30 bg-gradient-to-r from-orange-500 to-purple-500 py-1 pl-1 pr-3">
@@ -62,11 +105,22 @@ export function Hero() {
 
           </div>
           <div className="flex justify-center lg:justify-end lg:mr-20 z-10 [mask-image:linear-gradient(to_bottom,transparent,white_0%,white_80%,transparent)]">
-            <img
-              src="samsung3.png"
-              alt="phone"
-              className="max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg w-[14rem] md:w-[20rem] rounded-3xl"
-            />
+            {mobilesArrays.map((images, index) => (
+              <motion.div
+                key={images}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: activeIndex === index ? 1 : 0 }}
+                transition={{ duration: 0.5 }}
+                className={`${activeIndex === index ? "block" : "hidden"}`}
+              >
+                <img
+                  // src="samsung3.png"
+                  src={images}
+                  alt="phone"
+                  className="max-w-[90%] sm:max-w-sm md:max-w-md lg:max-w-lg w-[14rem] md:w-[20rem] rounded-3xl"
+                />
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>
@@ -106,10 +160,10 @@ export function Hero() {
         <div className="mx-auto flex max-w-screen-xl flex-col gap-8 px-4 md:px-8">
           <div className="mx-auto max-w-5xl text-center">
             <h4 className="text-xl font-bold tracking-tight text-black dark:text-white">
-            Design
+              Design
             </h4>
             <h2 className="text-5xl z-10 h-auto pb-5 font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
-            The Ultimate Profile<br /> Design
+              The Ultimate Profile<br /> Design
             </h2>
             <p className="mt-6 text-xl leading-8 text-black/80 dark:text-white">
               Enhance your connectivity with a <strong>digital presence </strong> to showcase your identity and grow your network.
