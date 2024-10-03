@@ -10,11 +10,19 @@ export function Hero() {
   const mobilesArrays = [
     "modi.jpg",
     "ajit.jpg",
+    "rahul.jpg",
+    "shinde.jpg",
+    "org.jpg",
+    "ca.jpg",
   ]
 
   const backgrounds = [
     "bg-orange-400",
     "bg-pink-400",
+    "bg-sky-400",
+    "bg-orange-400",
+    "bg-slate-900",
+    "bg-[#c7dfef]"
   ]
 
   const [activeIndex, setActiveIndex] = useState(0);

@@ -12,6 +12,12 @@ const themes = {
     textPrimary: 'text-white',
     textSecondary: 'text-white'
   },
+  politics3: {
+    background: 'bg-sky-400',
+    textBackground: 'text-sky-400',
+    textPrimary: 'text-white',
+    textSecondary: 'text-white'
+  },
   org1: {
     background: 'bg-slate-900',
     textBackground: 'text-slate-900',
