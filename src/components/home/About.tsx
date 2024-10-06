@@ -13,7 +13,7 @@ const About = () => {
       name: "Gauresh Suryawanshi",
       position: "CEO, R3sys",
       quote: `"At Sampark Bharat, we believe in empowering individuals and organizations to tell their stories with authenticity and impact. Our mission is to amplify voices and create networks that inspire change and progress."`,
-      image: "gauresh.png",
+      image: "gauresh.jpg",
       bgColor: "bg-gradient-to-tr from-red-500  to-orange-400",
     },
     {
@@ -21,7 +21,7 @@ const About = () => {
       name: "Sunil Joshi",
       position: "CTO, R3sys",
       quote: `"Our journey is driven by innovation and passion. At Sampark Bharat, we aim to build communities that foster collaboration and growth. We believe that technology should be a bridge to progress."`,
-      image: "sunil.png",
+      image: "sunil.jpg",
       bgColor: "bg-gradient-to-tr from-red-500  to-orange-400",
     },
   ];

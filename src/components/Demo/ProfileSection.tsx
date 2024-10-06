@@ -114,13 +114,13 @@ const IconGrid = ({ loading }: Loading) => {
   const { profile } = useContext(ProfileContext);
   const icons = [
     { href: `tel:${profile?.contact}`, icon: <IoCall className='text-green-400 w-8 h-8' /> },
-    { href: `mailto:${profile?.email}`, icon: <img className='w-8 h-8' src="https://img.icons8.com/color/144/gmail-new.png" alt="gmail-new" loading='lazy' /> },
-    { href: `https://wa.me/${profile?.whatsapp}`, icon: <img className='w-8 h-8' src="https://img.icons8.com/color/144/whatsapp--v1.png" alt="whatsapp--v1" loading='lazy' /> },
-    { href: `${profile?.facebook}`, icon: <img className='w-8 h-8' src="https://img.icons8.com/color/144/facebook-new.png" alt="facebook-new" loading='lazy' /> },
-    { href: `${profile?.instagram}`, icon: <img className='w-8 h-8' src="https://img.icons8.com/color/144/instagram-new--v1.png" alt="instagram-new--v1" loading='lazy' /> },
-    { href: `${profile?.twitter}`, icon: <img className='w-8 h-8' src="https://img.icons8.com/color/144/twitter-circled--v1.png" alt="twitter-circled--v1" loading='lazy' /> },
-    { href: `${profile?.website}`, icon: <LuLink className='w-6 h-6 ${themeClasses.textPrimary}' /> },
-    { href: `${profile?.linkedin}`, icon: <img className='w-8 h-8' src="https://img.icons8.com/color/144/linkedin-circled--v1.png" alt="linkedin-circled--v1" loading='lazy' /> },
+    { href: `mailto:${profile?.email}`, icon: <img className='w-8 h-8' src="/gmail.png" alt="gmail-new" loading='lazy' /> },
+    { href: `https://wa.me/${profile?.whatsapp}`, icon: <img className='w-8 h-8' src="/whatsapp.png" alt="whatsapp--v1" loading='lazy' /> },
+    { href: `${profile?.facebook}`, icon: <img className='w-8 h-8' src="/facebook.png" alt="facebook-new" loading='lazy' /> },
+    { href: `${profile?.instagram}`, icon: <img className='w-8 h-8' src="/instagram.png" alt="instagram-new--v1" loading='lazy' /> },
+    { href: `${profile?.twitter}`, icon: <img className='w-8 h-8' src="/twitter.png" alt="twitter-circled--v1" loading='lazy' /> },
+    { href: `${profile?.website}`, icon: <LuLink className='w-6 h-6 ${theme.textPrimary}' /> },
+    { href: `${profile?.linkedin}`, icon: <img className='w-8 h-8' src="/linkedin.png" alt="linkedin-circled--v1" loading='lazy' /> },
   ];
 
   return (

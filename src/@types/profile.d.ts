@@ -55,3 +55,10 @@ export type ProfileContextType = {
     setProfile: (profile: IProfile | null) => void; 
     setLoading: (loading: boolean) => void; 
 };
+
+export type ThemeType = {
+    background: string;
+    textBackground: string;
+    textPrimary: string;
+    textSecondary: string;
+};
