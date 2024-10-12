@@ -94,6 +94,10 @@ export const demoPrices = [
       "Downloads Section",
       "Testimonials",
     ],
+    notFeature: [  
+      "Enquiry Form",  
+      "Multi Language Support"
+    ],
     monthlyPrice: 9000,
     yearlyPrice: 9000,
     isMostPopular: false,
@@ -113,6 +117,9 @@ export const demoPrices = [
       "Downloads Section",
       "Testimonials",
       "Enquiry Form"
+    ],
+    notFeature: [    
+      "Multi Language Support"
     ],
     monthlyPrice: 19000,
     yearlyPrice: 19000,
@@ -135,6 +142,7 @@ export const demoPrices = [
       "Enquiry Form",
       "Multi Language Support"
     ],
+    notFeature: [],
     monthlyPrice: 29000,
     yearlyPrice: 29000,
     isMostPopular: true,
@@ -156,6 +164,7 @@ export const demoPrices = [
       "Enquiry Form",
       "Multi Language Support"
     ],
+    notFeature: [],
     monthlyPrice: "✨",
     yearlyPrice: "****",
     isMostPopular: false,

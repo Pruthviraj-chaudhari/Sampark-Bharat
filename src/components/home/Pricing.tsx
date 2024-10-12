@@ -1,4 +1,4 @@
-import { CheckIcon } from "@radix-ui/react-icons";
+import { CheckIcon, Cross2Icon } from "@radix-ui/react-icons";
 import { motion } from "framer-motion";
 import { Loader } from "lucide-react";
 import { useState } from "react";
@@ -89,9 +89,9 @@ const Pricing = () => {
                                             {" "}
                                             /{"year"}
                                         </span>
-                                    </span> 
+                                    </span>
                                     :
-                                   <span className=" w-full text-center whitespace-nowrap rounded-full bg-gradient-to-r from-red-500 to-orange-400 text-white px-2.5 py-2.5 text-[15px] font-semibold uppercase leading-5 tracking-wide">
+                                    <span className=" w-full text-center whitespace-nowrap rounded-full bg-gradient-to-r from-red-500 to-orange-400 text-white px-2.5 py-2.5 text-[15px] font-semibold uppercase leading-5 tracking-wide">
                                         Politicians Special ✨
                                     </span>
                                 }
@@ -121,20 +121,29 @@ const Pricing = () => {
 
                             <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-500/30 to-neutral-200/0" />
                             {price.features && price.features.length > 0 && (
+
+
                                 <ul className="flex flex-col gap-2 font-normal">
-                                    {price.features.map(
-                                        (feature: string, idx: number) => (
-                                            <li
-                                                key={idx}
-                                                className="flex items-center gap-3 text-xs font-medium text-black dark:text-white"
-                                            >
-                                                <CheckIcon className="size-5 shrink-0 rounded-full bg-green-400 p-[2px] text-black dark:text-white" />
-                                                <span className="flex">
-                                                    {feature}
-                                                </span>
-                                            </li>
-                                        )
-                                    )}
+                                    {price.features.map((feature, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center gap-3 text-xs font-medium text-black dark:text-white"
+                                        >
+                                            <CheckIcon className="size-5 shrink-0 rounded-full bg-green-400 p-[2px] text-black dark:text-white" />
+                                            <span className="flex">{feature}</span>
+                                        </li>
+                                    ))}
+                                    {price.notFeature.map((notFeature, idx) => (
+                                        <li
+                                            key={idx}
+                                            className="flex items-center gap-3 text-xs font-medium text-black dark:text-white"
+                                        >
+                                            <Cross2Icon className="size-5 shrink-0 rounded-full bg-red-400 p-[2px] text-black dark:text-white" />
+                                            <span className="flex ">
+                                                {notFeature}
+                                            </span>
+                                        </li>
+                                    ))}
                                 </ul>
                             )}
                         </div>
