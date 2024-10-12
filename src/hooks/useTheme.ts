@@ -7,7 +7,7 @@ function useTheme(profile: any) {
     return themes[profile.theme as ThemeType];
   }
   // Default theme or fallback
-  return themes['politics1'];
+  return themes['solid1'];
 }
 
 export default useTheme;

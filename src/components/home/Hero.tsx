@@ -101,9 +101,11 @@ export function Hero() {
             <div className="mt-12 flex flex-wrap justify-center gap-3 lg:justify-start">
               <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
-                <div className="px-4 sm:px-6 md:px-8 py-1 sm:py-2 font-medium bg-white rounded-[8px] md:rounded-[6px] relative group transition duration-200 text-sm sm:text-base md:text-lg text-black hover:text-white hover:bg-transparent">
-                  View Demo
-                </div>
+                <a href="/demo/narendra-modi" target="_blank">
+                  <div className="px-4 sm:px-6 md:px-8 py-1 sm:py-2 font-medium bg-white rounded-[8px] md:rounded-[6px] relative group transition duration-200 text-sm sm:text-base md:text-lg text-black hover:text-white hover:bg-transparent">
+                    View Demo
+                  </div>
+                </a>
               </button>
               <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
                 <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
@@ -148,14 +150,14 @@ export function Hero() {
           <picture>
             <source
               media="(min-width: 1024px)"
-              srcSet="business3.png"
+              srcSet="laptop.jpg"
             />
             <source
               media="(max-width: 1023px)"
-              srcSet="ipad.png"
+              srcSet="tablet.jpg"
             />
             <img
-              src="ipad.png"
+              src="tablet.jpg"
               alt="hero"
               height={720}
               width={1400}

@@ -25,7 +25,7 @@ export function AnimatedTabs() {
       value: "playground",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl text-xl md:text-4xl font-bold text-white">
-          <DummyContent imageUrl="business3.png" />
+          <DummyContent imageUrl="businessman.jpg" />
         </div>
       ),
     },
@@ -34,7 +34,7 @@ export function AnimatedTabs() {
       value: "content",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl text-xl md:text-4xl font-bold text-white">
-          <DummyContent imageUrl="politics.png" />
+          <DummyContent imageUrl="construction.jpg" />
         </div>
       ),
     },
@@ -43,7 +43,7 @@ export function AnimatedTabs() {
       value: "random",
       content: (
         <div className="w-full overflow-hidden relative h-full rounded-2xl text-xl md:text-4xl font-bold text-white">
-          <DummyContent imageUrl="politics.png" />
+          <DummyContent imageUrl="CAtheme.jpg" />
         </div>
       ),
     },

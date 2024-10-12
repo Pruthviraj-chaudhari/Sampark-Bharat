@@ -222,37 +222,37 @@ export const TECHS = [
 
 // Define available themes with Tailwind classes
 export const themes = {
-  politics1: {
+  solid1: {
     background: 'bg-orange-400',
     textBackground: 'text-orange-400',
     textPrimary: 'text-gray-700',
     textSecondary: 'text-gray-600'
   },
-  politics2: {
+  solid2: {
     background: 'bg-[#DE2695]',
     textBackground: 'text-[#DE2695]',
     textPrimary: 'text-white',
     textSecondary: 'text-white'
   },
-  politics3: {
+  solid3: {
     background: 'bg-sky-400',
     textBackground: 'text-sky-400',
     textPrimary: 'text-white',
     textSecondary: 'text-white'
   },
-  org1: {
+  solid4: {
     background: 'bg-slate-900',
     textBackground: 'text-slate-900',
     textPrimary: 'text-slate-200',
     textSecondary: 'text-slate-300'
   },
-  business1: {
+  solid5: {
     background: 'bg-[#c7dfef]',
     textBackground: 'text-blue-600',
     textPrimary: 'text-gray-700',
     textSecondary: 'text-blue-600 '
   },
-  business2: {
+  solid6: {
     background: 'bg-orange-400',
     textBackground: 'text-orange-400',
     textPrimary: 'text-gray-700',
@@ -473,160 +473,159 @@ export const themes = {
     textSecondary: 'text-gray-600',
   },
 
-  darkGradient1: {
+  gradient11: {
     background: 'bg-gradient-to-r from-gray-800 to-gray-900',
     textBackground: 'text-gradient-to-r from-gray-800 to-gray-900',
     textPrimary: 'text-gray-300',
     textSecondary: 'text-gray-400',
   },
-  darkGradient2: {
+  gradient12: {
     background: 'bg-gradient-to-r from-slate-700 to-slate-900',
     textBackground: 'text-gradient-to-r from-slate-700 to-slate-900',
     textPrimary: 'text-slate-200',
     textSecondary: 'text-slate-400',
   },
-  darkGradient3: {
+  gradient13: {
     background: 'bg-gradient-to-r from-indigo-900 to-gray-900',
     textBackground: 'text-gradient-to-r from-indigo-900 to-gray-900',
     textPrimary: 'text-indigo-300',
     textSecondary: 'text-indigo-400',
   },
-  darkGradient4: {
+  gradient14: {
     background: 'bg-gradient-to-r from-purple-900 to-indigo-900',
     textBackground: 'text-gradient-to-r from-purple-900 to-indigo-900',
     textPrimary: 'text-gray-300',
     textSecondary: 'text-gray-400',
   },
-  darkGradient5: {
+  gradient15: {
     background: 'bg-gradient-to-r from-teal-800 to-teal-900',
     textBackground: 'text-gradient-to-r from-teal-800 to-teal-900',
     textPrimary: 'text-teal-300',
     textSecondary: 'text-teal-400',
   },
-  darkGradient6: {
+  gradient16: {
     background: 'bg-gradient-to-r from-blue-900 to-gray-800',
     textBackground: 'text-gradient-to-r from-blue-900 to-gray-800',
     textPrimary: 'text-blue-300',
     textSecondary: 'text-blue-400',
   },
-  darkGradient7: {
+  gradient17: {
     background: 'bg-gradient-to-r from-emerald-900 to-teal-900',
     textBackground: 'text-gradient-to-r from-emerald-900 to-teal-900',
     textPrimary: 'text-gray-300',
     textSecondary: 'text-gray-400',
   },
-  darkGradient8: {
+  gradient18: {
     background: 'bg-gradient-to-r from-black to-gray-800',
     textBackground: 'text-gradient-to-r from-black to-gray-800',
     textPrimary: 'text-gray-300',
     textSecondary: 'text-gray-400',
   },
-  darkGradient9: {
+  gradient19: {
     background: 'bg-gradient-to-r from-red-900 to-gray-800',
     textBackground: 'text-gradient-to-r from-red-900 to-gray-800',
     textPrimary: 'text-red-300',
     textSecondary: 'text-gray-400',
   },
-  darkGradient10: {
+  gradient20: {
     background: 'bg-gradient-to-r from-gray-700 to-black',
     textBackground: 'text-gradient-to-r from-gray-700 to-black',
     textPrimary: 'text-gray-200',
     textSecondary: 'text-gray-400',
   },
 
-  schoolsColleges1: {
+  gradient21: {
     background: 'bg-gradient-to-r from-blue-200 to-blue-400',
     textBackground: 'text-gradient-to-r from-blue-200 to-blue-400',
     textPrimary: 'text-gray-800',
     textSecondary: 'text-blue-900',
   },
-  schoolsColleges2: {
+  gradient22: {
     background: 'bg-gradient-to-r from-green-300 to-teal-500',
     textBackground: 'text-gradient-to-r from-green-300 to-teal-500',
     textPrimary: 'text-gray-800',
     textSecondary: 'text-teal-700',
   },
 
-  doctor1: {
+  gradient23: {
     background: 'bg-gradient-to-r from-cyan-200 to-blue-500',
     textBackground: 'text-gradient-to-r from-cyan-200 to-blue-500',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-blue-700',
   },
-  doctor2: {
+  gradient24: {
     background: 'bg-gradient-to-r from-green-100 to-emerald-500',
     textBackground: 'text-gradient-to-r from-green-100 to-emerald-500',
     textPrimary: 'text-gray-800',
     textSecondary: 'text-emerald-700',
   },
-  doctor3: {
+  gradient25: {
     background: 'bg-gradient-to-r from-blue-300 to-gray-200',
     textBackground: 'text-gradient-to-r from-blue-300 to-gray-200',
     textPrimary: 'text-gray-700',
     textSecondary: 'text-blue-600',
   },
 
-  construction1: {
+  gradient26: {
     background: 'bg-gradient-to-r from-yellow-300 to-gray-500',
     textBackground: 'text-gradient-to-r from-yellow-300 to-gray-500',
     textPrimary: 'text-gray-800',
     textSecondary: 'text-gray-700',
   },
-  construction2: {
+  gradient27: {
     background: 'bg-gradient-to-r from-gray-300 to-yellow-600',
     textBackground: 'text-gradient-to-r from-gray-300 to-yellow-600',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-yellow-700',
   },
-  construction3: {
+  gradient28: {
     background: 'bg-gradient-to-r from-orange-400 to-gray-700',
     textBackground: 'text-gradient-to-r from-orange-400 to-gray-700',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-gray-800',
   },
 
-  ca1: {
+  gradient29: {
     background: 'bg-gradient-to-r from-gray-200 to-blue-600',
     textBackground: 'text-gradient-to-r from-gray-200 to-blue-600',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-blue-700',
   },
-  ca2: {
+  gradient30: {
     background: 'bg-gradient-to-r from-slate-300 to-indigo-600',
     textBackground: 'text-gradient-to-r from-slate-300 to-indigo-600',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-indigo-700',
   },
-  ca3: {
+  gradient31: {
     background: 'bg-gradient-to-r from-teal-200 to-gray-600',
     textBackground: 'text-gradient-to-r from-teal-200 to-gray-600',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-gray-800',
   },
 
-  personalIdentity1: {
+  gradient32: {
     background: 'bg-gradient-to-r from-pink-300 to-purple-600',
     textBackground: 'text-gradient-to-r from-pink-300 to-purple-600',
     textPrimary: 'text-white',
     textSecondary: 'text-gray-200',
   },
-  personalIdentity2: {
+  gradient33: {
     background: 'bg-gradient-to-r from-blue-500 to-green-500',
     textBackground: 'text-gradient-to-r from-blue-500 to-green-500',
     textPrimary: 'text-white',
     textSecondary: 'text-gray-100',
   },
-  personalIdentity3: {
+  gradient34: {
     background: 'bg-gradient-to-r from-gray-400 to-gray-800',
     textBackground: 'text-gradient-to-r from-gray-400 to-gray-800',
     textPrimary: 'text-white',
     textSecondary: 'text-gray-300',
   },
-  personalIdentity4: {
+  gradient35: {
     background: 'bg-gradient-to-r from-purple-400 to-pink-500',
     textBackground: 'text-gradient-to-r from-purple-400 to-pink-500',
     textPrimary: 'text-gray-900',
     textSecondary: 'text-gray-800',
   },
-  
 };

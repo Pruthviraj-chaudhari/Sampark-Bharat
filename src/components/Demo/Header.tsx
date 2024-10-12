@@ -8,7 +8,6 @@ import { useContext } from "react"
 const Header = () => {
     const { profile } = useContext(ProfileContext);
     const themeClasses = useTheme(profile);
-    console.log(themeClasses.background.substring(3))
     return (
         <header className="">
             <div className="container flex h-16 items-center justify-between px-4 md:px-6">
