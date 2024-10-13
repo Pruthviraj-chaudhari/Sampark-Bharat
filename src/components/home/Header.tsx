@@ -14,28 +14,32 @@ const Header = () => {
                         <span className="sr-only">Toggle navigation menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className=" bg-white">
+                <SheetContent side="left" className="bg-white">
                     <a href="#">
-                        {/* <MountainIcon className="h-6 w-6" /> */}
                         <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
                         <span className="sr-only">Sampark Bharat</span>
                     </a>
                     <div className="grid gap-2 py-6">
-                        <a href="#home" className="flex w-full items-center py-2 text-lg font-semibold">
+                        <a href="#home" className="flex w-full items-center ml-3 py-2 text-lg font-semibold">
                             Home
                         </a>
-                        <a href="#features" className="flex w-full items-center py-2 text-lg font-semibold">
+                        <a href="#features" className="flex w-full items-center ml-3 py-2 text-lg font-semibold">
                             Features
                         </a>
-                        <a href="#pricing" className="flex w-full items-center py-2 text-lg font-semibold">
+                        <a href="#pricing" className="flex w-full items-center ml-3 py-2 text-lg font-semibold">
                             Pricing
                         </a>
-                        <a href="#about" className="flex w-full items-center py-2 text-lg font-semibold">
+                        <a href="#about" className="flex w-full items-center ml-3 py-2 text-lg font-semibold">
                             About
                         </a>
-                        <a href="#contact" className="flex w-full items-center py-2 text-lg font-semibold">
-                            Contact Us
-                        </a>
+                        <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0 w-fit">
+                            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
+                            <a  href="/themes">
+                                <div className=" rounded-md h-7 px-3 text-lg font-medium  bg-white relative group transition duration-200 text-black hover:text-white hover:bg-transparent">
+                                    Themes
+                                </div>
+                            </a>
+                        </button>
                     </div>
                 </SheetContent>
             </Sheet>
@@ -87,9 +91,9 @@ const Header = () => {
                     <NavigationMenuLink asChild>
                         <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
                             <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
-                            <a  href="#contact">
+                            <a  href="/themes">
                                 <div className=" rounded-md h-7 px-3 text-lg font-medium  bg-white relative group transition duration-200 text-black hover:text-white hover:bg-transparent">
-                                    Contact
+                                    Themes
                                 </div>
                             </a>
                         </button>
