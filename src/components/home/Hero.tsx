@@ -46,7 +46,7 @@ export function Hero() {
 
         {backgrounds.map((bg, index) => (
           <motion.div
-            key={bg}
+            key={index}
             initial={{ opacity: 0 }}
             animate={{ opacity: activeIndex === index ? 1 : 0 }}
             transition={{ duration: 0.5 }}
@@ -108,8 +108,19 @@ export function Hero() {
                   </div>
                 </a>
               </button>
-              
-              <ContactFormModal />
+
+              <ContactFormModal
+                triggerButton={
+                  <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
+                    <div className="px-4 sm:px-6 md:px-8 py-1 sm:py-2 font-medium rounded-[8px] md:rounded-[6px] relative group transition duration-200 text-sm sm:text-base md:text-lg text-white bg-transparent">
+                      Get Started
+                    </div>
+                  </button>
+                }
+              />
+
+
             </div>
 
           </div>

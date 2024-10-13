@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { demoPrices } from "@/lib/data";
+import ContactFormModal from "../common/ContactModal";
 
 
 const Pricing = () => {
@@ -97,27 +98,31 @@ const Pricing = () => {
                                 }
                             </motion.div>
 
-                            <Button
-                                className={cn(
-                                    "group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter bg-black",
-                                    "hover:ring-primary transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-offset-2"
-                                )}
-                                disabled={isLoading}
-                                onClick={() => void onSubscribeClick(price.id)}
-                            >
-                                <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
-                                {(!isLoading ||
-                                    (isLoading && id !== price.id)) && (
-                                        <p>Contact Us</p>
-                                    )}
+                            <ContactFormModal
+                                triggerButton={
+                                    <Button
+                                        className={cn(
+                                            "group relative w-full gap-2 overflow-hidden text-lg font-semibold tracking-tighter bg-black",
+                                            "hover:ring-primary transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-offset-2"
+                                        )}
+                                        disabled={isLoading}
+                                        onClick={() => void onSubscribeClick(price.id)}
+                                    >
+                                        <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
+                                        {(!isLoading ||
+                                            (isLoading && id !== price.id)) && (
+                                                <p>Contact Us</p>
+                                            )}
 
-                                {isLoading && id === price.id && (
-                                    <p>Subscribing</p>
-                                )}
-                                {isLoading && id === price.id && (
-                                    <Loader className="mr-2 size-4 animate-spin" />
-                                )}
-                            </Button>
+                                        {isLoading && id === price.id && (
+                                            <p>Subscribing</p>
+                                        )}
+                                        {isLoading && id === price.id && (
+                                            <Loader className="mr-2 size-4 animate-spin" />
+                                        )}
+                                    </Button>
+                                }
+                            />
 
                             <hr className="m-0 h-px w-full border-none bg-gradient-to-r from-neutral-200/0 via-neutral-500/30 to-neutral-200/0" />
                             {price.features && price.features.length > 0 && (

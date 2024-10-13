@@ -123,15 +123,9 @@ export function Footer() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center font-semibold text-primary no-underline ml-5"
                         >
-
-                            <a
-                                href="https://r3sys.com/"
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-inherit transition-all font-bold"
-                            >
+                            <div className="text-inherit transition-all font-bold">
                                 R3 System India Private Limited
-                            </a>
+                            </div>
                         </a>
                     </div>
                     <div className="text-center lg:text-left">
