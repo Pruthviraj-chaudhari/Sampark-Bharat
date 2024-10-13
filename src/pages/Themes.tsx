@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
-import Playground from '@/components/common/playground';
 import { useState } from 'react';
-import { themes } from '@/lib/data';
+import { gradientThemes, luxuryThemes, solidThemes } from '@/lib/data';
 import { IoCall, IoMail } from "react-icons/io5";
 import { MdLocationPin } from "react-icons/md";
 import { LuLink } from "react-icons/lu";
@@ -9,9 +8,10 @@ import { useContext } from "react";
 import { ProfileContext } from "@/context/MyContext";
 import Balancer from "react-wrap-balancer";
 import { Separator } from '@/components/ui/separator';
-import { RiContactsLine } from "react-icons/ri"
-import { GoShareAndroid } from 'react-icons/go';
+import { RiContactsLine } from "react-icons/ri";
 import { ThemeType } from '@/@types/profile';
+import ThemeCards from '@/components/home/ThemeCards';
+import { GoShareAndroid } from 'react-icons/go';
 
 
 export default function Themes() {
@@ -34,20 +34,20 @@ export default function Themes() {
 
     return (
         <>
-            <header className="">
+            <header>
                 <div className="container flex h-16 items-center justify-between px-4 md:px-6">
                     <a href="#" className="flex items-center gap-2">
                         <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
                     </a>
                     <div className="flex gap-2">
-                        <Button className={`border-2 border-${theme.background.substring(3)} hover:${theme.background} hover:text-white`} variant={"outline"}>
+                        <Button className={`border-2 border-${theme.background.substring(3)} hover:${theme.background}`} variant={"outline"}>
                             <span className="hidden md:inline">
                                 Share</span>
                             <GoShareAndroid className=" ml-1 w-4 h-4" />
                         </Button>
                         <a href="https://samparkbharat.com/auth/register" target="_blank">
                             <Button
-                                className={`border-2 border-${theme.background.substring(3)} hover:${theme.background} hover:text-white`}
+                                className={`border-2 border-${theme.background.substring(3)} hover:${theme.background}`}
                                 variant={"outline"}>
                                 <span className="hidden md:inline">Get Your vCard</span>
                                 <RiContactsLine className=" ml-1 w-4 h-4" />
@@ -57,26 +57,26 @@ export default function Themes() {
                 </div>
             </header>
             <ProfileSection theme={theme} />
-            <div className=" bg-white">
-                <div className=" bg-white relative mx-auto h-screen w-full max-w-7xl px-6 md:px-8 lg:px-12">
+            <div className="bg-white">
+                <div className="bg-white relative mx-auto h-full w-full max-w-7xl px-6 md:px-8 lg:px-12">
                     <div className="pt-8">
                         <div className="relative mx-auto flex max-w-2xl flex-col items-center">
                             <div className="mb-8 flex">
-                              
-                                    <span className="relative inline-block overflow-hidden rounded-full p-[1px]">
-                                        <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a9a9a9_0%,#0c0c0c_50%,#a9a9a9_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#171717_0%,#737373_50%,#171717_100%)]" />
-                                        <div className="inline-flex h-full w-full cursor-pointer justify-center rounded-full bg-white px-3 py-1 text-xs font-medium leading-5 text-slate-600 backdrop-blur-xl dark:bg-black dark:text-slate-200">
-                                            New Themes ⚡️
-                                        </div>
-                                    </span>
-                                
+
+                                <span className="relative inline-block overflow-hidden rounded-full p-[1px]">
+                                    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a9a9a9_0%,#0c0c0c_50%,#a9a9a9_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#171717_0%,#737373_50%,#171717_100%)]" />
+                                    <div className="inline-flex h-full w-full cursor-pointer justify-center rounded-full bg-white px-3 py-1 text-xs font-medium leading-5 text-slate-600 backdrop-blur-xl dark:bg-black dark:text-slate-200">
+                                        New Themes ⚡️
+                                    </div>
+                                </span>
+
                             </div>
 
                             <div className="mx-auto max-w-5xl text-center">
                                 <h2 className="text-5xl z-10 h-auto pb-5 font-bold tracking-tight sm:text-6xl bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">
                                     Customize <br /> Dynamic Digital Profile
                                 </h2>
-                                <p className="mt-6 text-xl leading-8 text-black/80 dark:text-white">
+                                <p className="mt-6 text-xl leading-8 text-black/80">
                                     Select and apply professionally designed themes for your digital profile on <strong>Sampark Bharat.</strong>
                                 </p>
                             </div>
@@ -86,24 +86,17 @@ export default function Themes() {
                                     Reset Theme
                                 </Button>
                             </div>
-
-
                         </div>
                     </div>
-                    <div className="overflow-hidden px-4 pb-20 pt-52 md:px-10 bg-white">
-                        <div className="grid grid-cols-1 gap-6 pb-6 md:grid-cols-2 lg:grid-cols-4">
-                            {Object.entries(themes).map(([themeName, themeColors]) => {
-                                return (
-                                    <Playground
-                                        key={themeName}
-                                        setTheme={setTheme}
-                                        theme={themeColors}
-                                        themeName={themeName}
-                                    />
-                                );
-                            })}
-                        </div>
+
+                    <div className="overflow-hidden px-4 pb-20 pt-10 md:px-10 bg-white">
+                        <ThemeCards title="Solid Themes" themes={solidThemes} setTheme={setTheme} />
+                        <Separator className="my-10" />
+                        <ThemeCards title="Luxury Themes" themes={luxuryThemes} setTheme={setTheme} />
+                        <Separator className="my-10" />
+                        <ThemeCards title="Gradient Themes" themes={gradientThemes} setTheme={setTheme} />
                     </div>
+
                     <footer>
                         <div className="flex items-center justify-center py-8">
                             <span className="text-sm text-neutral-800 dark:text-neutral-200">

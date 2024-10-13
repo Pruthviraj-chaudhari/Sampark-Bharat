@@ -21,7 +21,7 @@ const Playground: React.FC<PlaygroundProps> = ({
   return (
     <div
       onClick={handleCardClick}
-      className={`relative min-h-[300px] w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10 ${theme.background} transition-transform duration-300 hover:scale-105 hover:ring-slate-900/30 active:scale-95 cursor-pointer`}
+      className={`relative min-h-[200px] md:min-h-[300px] w-full overflow-hidden rounded-lg ring-1 ring-slate-900/10 ${theme.background} transition-transform duration-300 hover:scale-105 hover:ring-slate-900/30 active:scale-95 cursor-pointer`}
     >
       <div className="absolute left-4 top-4 z-10">
         <div className="flex flex-row gap-4">
@@ -30,7 +30,7 @@ const Playground: React.FC<PlaygroundProps> = ({
           </div>
         </div>
       </div>
-      <h2 className={`absolute left-4 bottom-4 z-10 text-lg font-semibold ${theme.textPrimary}`}>
+      <h2 className={`absolute italic left-4 bottom-4 z-10 text-lg font-semibold ${theme.textPrimary}`}>
         {themeName}
       </h2>
     </div>
