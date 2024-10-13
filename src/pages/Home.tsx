@@ -6,6 +6,7 @@ import Hero from "@/components/home/Hero"
 import Pricing from "@/components/home/Pricing"
 import About from "@/components/home/About"
 import Contact from "@/components/home/Contact"
+import FloatingButtons from "@/components/home/FloatingButtons"
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
             <Contact />
             <Footer />
             <ScrollToTopButton />
+            <FloatingButtons />
         </div>
     )
 }
