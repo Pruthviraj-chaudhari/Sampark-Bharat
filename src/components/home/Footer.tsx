@@ -1,8 +1,7 @@
-import { LinkedInLogoIcon } from "@radix-ui/react-icons";
 import { Typography } from "@material-tailwind/react";
 import Balancer from "react-wrap-balancer";
 import { COMPANY, HELP, TECHS } from "@/lib/data";
-import { FaFacebook, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const YEAR = new Date().getFullYear();
 
@@ -28,17 +27,14 @@ export function Footer() {
                         </Typography>
                         <div className="mt-6">
                             <div className="flex gap-4">
-                                <a href={`https://wa.me/`} target="_blank" className="hover:text-muted-foreground">
+                                <a href={`https://wa.me/918600180045`} target="_blank" className="hover:text-muted-foreground">
                                     <FaWhatsapp className="h-6 w-6" />
                                 </a>
-                                <a href="#" target="_blank" className="hover:text-muted-foreground">
+                                <a href="https://www.facebook.com/profile.php?id=61566115388120" target="_blank" className="hover:text-muted-foreground">
                                     <FaFacebook className="h-6 w-6" />
                                 </a>
-                                <a href="#" target="_blank" className="hover:text-muted-foreground">
-                                    <FaTwitter className="h-6 w-6" />
-                                </a>
-                                <a href="#" target="_blank" className="hover:text-muted-foreground">
-                                    <LinkedInLogoIcon className="h-6 w-6" />
+                                <a href="https://www.instagram.com/sampark.bharat/" target="_blank" className="hover:text-muted-foreground">
+                                    <FaInstagram className="h-6 w-6" />
                                 </a>
                             </div>
                         </div>

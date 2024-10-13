@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { toast } from "sonner";
 
 const Contact = () => {
     const [form, setForm] = useState({
@@ -16,7 +17,7 @@ const Contact = () => {
     };
 
     const handleCaptchaChange = (value:any) => {
-        setCaptchaValue(value); // this value is the token returned by reCAPTCHA
+        setCaptchaValue(value);
     };
 
     const handleSubmit = (e:any) => {
@@ -27,11 +28,15 @@ const Contact = () => {
             setError("Please verify that you're not a robot.");
             return;
         }
-        
-        // Proceed with form submission
-        // Send form data and captcha token (captchaValue) to the backend for validation
+    
         setError(null);
         console.log("Form submitted:", form, captchaValue);
+        toast.success("Form successfully submitted!");
+        setForm({
+            name: "",
+            mobile: "",
+            message: "",
+        })
     };
 
     return (

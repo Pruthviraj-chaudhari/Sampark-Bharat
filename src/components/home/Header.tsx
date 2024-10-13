@@ -14,11 +14,11 @@ const Header = () => {
                         <span className="sr-only">Toggle navigation menu</span>
                     </Button>
                 </SheetTrigger>
-                <SheetContent side="left">
+                <SheetContent side="left" className=" bg-white">
                     <a href="#">
                         {/* <MountainIcon className="h-6 w-6" /> */}
                         <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
-                        <span className="sr-only">Acme Inc</span>
+                        <span className="sr-only">Sampark Bharat</span>
                     </a>
                     <div className="grid gap-2 py-6">
                         <a href="#home" className="flex w-full items-center py-2 text-lg font-semibold">
@@ -34,7 +34,7 @@ const Header = () => {
                             About
                         </a>
                         <a href="#contact" className="flex w-full items-center py-2 text-lg font-semibold">
-                            Contact
+                            Contact Us
                         </a>
                     </div>
                 </SheetContent>
@@ -85,13 +85,14 @@ const Header = () => {
                         </a>
                     </NavigationMenuLink>
                     <NavigationMenuLink asChild>
-                        <a
-                            href="#contact"
-                            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-white px-4 py-2 text-lg font-medium transition-colors hover:bg-gray-100 hover:text-gray-900 focus:bg-gray-100 focus:text-gray-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-gray-100/50 data-[state=open]:bg-gray-100/50 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus:bg-gray-800 dark:focus:text-gray-50 dark:data-[active]:bg-gray-800/50 dark:data-[state=open]:bg-gray-800/50"
-
-                        >
-                            Contact
-                        </a>
+                        <button className="p-[1px] sm:p-[2px] md:p-[3px] relative flex-shrink-0">
+                            <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-purple-500 rounded-lg" />
+                            <a  href="#contact">
+                                <div className=" rounded-md h-7 px-3 text-lg font-medium  bg-white relative group transition duration-200 text-black hover:text-white hover:bg-transparent">
+                                    Contact
+                                </div>
+                            </a>
+                        </button>
                     </NavigationMenuLink>
                 </NavigationMenuList>
             </NavigationMenu>
