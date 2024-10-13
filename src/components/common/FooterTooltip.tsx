@@ -37,18 +37,18 @@ const people = [
         id: 4,
         name: "Milkesh Jain",
         designation: "T&P Officer",
-        image: "https://media.licdn.com/dms/image/C4E03AQG6QppZjUy9Tw/profile-displayphoto-shrink_800_800/0/1607869406881?e=1727913600&v=beta&t=o1Kr5F1NJLEiPn0TMWntxqHe1mqLw3SI_nhGlpb5QUU",
+        image: "https://pbs.twimg.com/profile_images/1338127055171424256/zUYNz36a_400x400.jpg",
     },
     {
         id: 5,
-        name: "Tyler Durden",
+        name: "Mahesh Chaudhari",
         designation: "Soap Developer",
         image: "https://r3sys.com/assets/img/testimonial-2.jpg",
     },
     {
         id: 6,
-        name: "Dora",
-        designation: "The Explorer",
+        name: "Nishant Verma",
+        designation: "Chatered Accountant",
         image: "https://r3sys.com/assets/img/testimonial-4.jpg"
     },
 ];
