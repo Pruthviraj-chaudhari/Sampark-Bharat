@@ -25,33 +25,18 @@ export function Footer() {
                                 Professional Impressions in the Digital Era.
                             </Balancer>
                         </Typography>
-                        <div className="mt-6">
-                            <div className="flex gap-4">
-                                <a href={`https://wa.me/918600180045`} target="_blank" className="hover:text-muted-foreground">
-                                    <FaWhatsapp className="h-6 w-6" />
-                                </a>
-                                <a href="https://www.facebook.com/profile.php?id=61566115388120" target="_blank" className="hover:text-muted-foreground">
-                                    <FaFacebook className="h-6 w-6" />
-                                </a>
-                                <a href="https://www.instagram.com/sampark.bharat/" target="_blank" className="hover:text-muted-foreground">
-                                    <FaInstagram className="h-6 w-6" />
-                                </a>
-                            </div>
-                        </div>
                     </div>
                     <div className="ml-auto w-full px-4 md:w-7/12">
                         <div className="items-top mb-6 flex flex-col md:flex-row">
                             <div className="w-6/12 pt-6 md:ml-auto md:px-4 md:pt-0 xl:w-3/12">
                                 <span className="text-md mb-4 block font-medium text-primary">
-                                    Company
+                                    Quick Links
                                 </span>
                                 <ul className="list-unstyled">
                                     {COMPANY.map(({ name, link }, key) => (
                                         <li key={key}>
                                             <a
                                                 href={link}
-                                                target="_blank"
-                                                rel="noreferrer"
                                                 className="block pb-2 text-sm font-normal leading-relaxed text-gray-600 transition-colors hover:text-primary"
                                             >
                                                 {name}
@@ -62,7 +47,7 @@ export function Footer() {
                             </div>
                             <div className="md:ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-3/12">
                                 <span className="text-md mb-4 block font-medium text-primary">
-                                    Help
+                                    Privacy
                                 </span>
                                 <ul className="list-unstyled">
                                     {HELP.map(({ name, link }, key) => (
@@ -70,11 +55,7 @@ export function Footer() {
                                             <a
                                                 href={link}
                                                 rel="noreferrer"
-                                                target={
-                                                    name === "Pricing"
-                                                        ? "_self"
-                                                        : "_blank"
-                                                }
+                                                target="_blank"
                                                 className="block pb-2 text-sm font-normal leading-relaxed text-gray-600 transition-colors hover:text-primary"
                                             >
                                                 {name}
@@ -85,13 +66,15 @@ export function Footer() {
                             </div>
                             <div className="md:ml-auto w-6/12 pt-6 md:px-4 md:pt-0 xl:w-3/12">
                                 <span className="text-md mb-4 block font-medium text-primary">
-                                    Tehnologies
+                                    Blogs
                                 </span>
                                 <ul className="list-unstyled">
                                     {TECHS.map(({ name, link }, key) => (
                                         <li key={key}>
                                             <a
                                                 href={link}
+                                                rel="noreferrer"
+                                                target="_blank"
                                                 className="block pb-2 text-sm font-normal leading-relaxed text-gray-600 transition-colors hover:text-primary"
                                             >
                                                 {name}
@@ -107,26 +90,19 @@ export function Footer() {
                 <div className="flex flex-wrap items-center justify-center gap-2 md:justify-between">
                     <div className="mr-auto w-full px-4 text-center md:w-4/12 md:px-0 md:text-left">
 
-                        <a href="https://r3sys.com/">
-                            <span className="ml-5">Powered by</span>
-                            <img
-                                src="https://r3sys.com/assets/img/Png.png"
-                                className="mx-auto md:ml-0 md:mr-auto"
-                                alt="r3sys"
-                                width={150}
-                                height={150}
-                            />
-                        </a>
-                        <a
-                            href="https://r3sys.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center font-semibold text-primary no-underline ml-5"
-                        >
-                            <div className="text-inherit transition-all font-bold">
-                                R3 System India Private Limited
+                    <div className="">
+                            <div className="flex gap-4">
+                                <a href={`https://wa.me/918530089393`} target="_blank" className="hover:text-muted-foreground">
+                                    <FaWhatsapp className="h-6 w-6" />
+                                </a>
+                                <a href="https://www.facebook.com/profile.php?id=61566115388120" target="_blank" className="hover:text-muted-foreground">
+                                    <FaFacebook className="h-6 w-6" />
+                                </a>
+                                <a href="https://www.instagram.com/sampark.bharat/" target="_blank" className="hover:text-muted-foreground">
+                                    <FaInstagram className="h-6 w-6" />
+                                </a>
                             </div>
-                        </a>
+                        </div>
                     </div>
                     <div className="text-center lg:text-left">
                         <div className="text-md mt-2 py-1 font-normal text-gray-600">

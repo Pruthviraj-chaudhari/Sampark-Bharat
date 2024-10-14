@@ -8,10 +8,10 @@ import { useContext } from "react";
 import { ProfileContext } from "@/context/MyContext";
 import Balancer from "react-wrap-balancer";
 import { Separator } from '@/components/ui/separator';
-import { RiContactsLine } from "react-icons/ri";
 import { ThemeType } from '@/@types/profile';
 import ThemeCards from '@/components/home/ThemeCards';
-import { GoShareAndroid } from 'react-icons/go';
+import Header from '@/components/home/Header';
+import Footer from '@/components/home/Footer';
 
 
 export default function Themes() {
@@ -34,7 +34,8 @@ export default function Themes() {
 
     return (
         <>
-            <header>
+            <Header />
+            {/* <header>
                 <div className="container flex h-16 items-center justify-between px-4 md:px-6">
                     <a href="#" className="flex items-center gap-2">
                         <img className="w-40" src="/logo_main.png" alt="Sampark Bharat" />
@@ -55,7 +56,7 @@ export default function Themes() {
                         </a>
                     </div>
                 </div>
-            </header>
+            </header> */}
             <ProfileSection theme={theme} />
             <div className="bg-white">
                 <div className="bg-white relative mx-auto h-full w-full max-w-7xl px-6 md:px-8 lg:px-12">
@@ -96,24 +97,9 @@ export default function Themes() {
                         <Separator className="my-10" />
                         <ThemeCards title="Gradient Themes" themes={gradientThemes} setTheme={setTheme} />
                     </div>
-
-                    <footer>
-                        <div className="flex items-center justify-center py-8">
-                            <span className="text-sm text-neutral-800 dark:text-neutral-200">
-                                Made by
-                                <a
-                                    href="https://akatsuki-connect.vercel.app/fullprofile/65f1932fb302b45e794539d4"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="ml-1 text-neutral-950 dark:text-neutral-100"
-                                >
-                                    @Pruthviraj Chaudhari
-                                </a>
-                            </span>
-                        </div>
-                    </footer>
                 </div>
             </div>
+            <Footer />
         </>
     );
 }
