@@ -65,7 +65,7 @@ export function Hero() {
         </div>
 
 
-        <div className="container mx-auto grid items-center gap-8 lg:grid-cols-2">
+        <div className="container mt-10 md:mt-5 mx-auto grid items-center gap-8 lg:grid-cols-2">
           <div className="text-center lg:text-left">
             <div className="mb-8 inline-flex items-center rounded-lg border border-dark/30 bg-gradient-to-r from-orange-500 to-purple-500 py-1 pl-1 pr-3">
               <Typography

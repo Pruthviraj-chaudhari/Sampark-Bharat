@@ -83,6 +83,7 @@ export const demoPrices = [
   {
     id: "price_trial",
     name: "Bronze",
+    speciality: "Basic Plan",
     description: "Explore all basic features with bronze plan.",
     features: [
       "1 App User (For Auto SMS)",
@@ -101,11 +102,12 @@ export const demoPrices = [
     monthlyPrice: 9000,
     yearlyPrice: 9000,
     isMostPopular: false,
-    showPrices: true,
+    showPrices: false,
   },
   {
     id: "price_basic",
     name: "Silver",
+    speciality: "Startup Special⚡",
     description: "A basic plan for startups and individual users.",
     features: [
       "3 App User (For Auto SMS)",
@@ -124,11 +126,12 @@ export const demoPrices = [
     monthlyPrice: 19000,
     yearlyPrice: 19000,
     isMostPopular: false,
-    showPrices: true,
+    showPrices: false,
   },
   {
     id: "price_standard",
     name: "Gold",
+    speciality: "Growing Businesses⚡",
     description: "A gold plan for growing businesses.",
     features: [
       "7 App User (For Auto SMS)",
@@ -146,11 +149,12 @@ export const demoPrices = [
     monthlyPrice: 29000,
     yearlyPrice: 29000,
     isMostPopular: true,
-    showPrices: true,
+    showPrices: false,
   },
   {
     id: "price_politician_premium",
     name: "Platinum",
+    speciality: "Politicians Special ✨",
     description: "Designed for political leaders to maximize their reach.",
     features: [
       "Unlimited App User (For Auto SMS)",
@@ -174,58 +178,54 @@ export const demoPrices = [
 
 export const COMPANY = [
   {
-    name: "About Us",
+    name: "Home",
     link: "/",
   },
   {
-    name: "Blog",
-    link: "/",
+    name: "Features",
+    link: "#features",
   },
   {
-    name: "Github",
-    link: "/",
+    name: "Pricing",
+    link: "#pricing",
   },
   {
-    name: "Free Products",
-    link: "/",
+    name: "About",
+    link: "#about",
+  },
+  {
+    name: "Themes",
+    link: "/themes",
   },
 ];
 
 export const HELP = [
   {
-    name: "Knowledge Center",
-    link: "/",
+    name: "Terms & Condition",
+    link: "./Terms and Conditions - Sampark Bharat.pdf",
   },
   {
-    name: "Contact Us",
-    link: "/",
-  },
-  {
-    name: "Premium Support",
-    link: "/",
-  },
-  {
-    name: "Pricing",
-    link: "/",
-  },
+    name: "Privacy Policy",
+    link: "./Privacy Policy - Sampark Bharat.pdf",
+  }
 ];
 
 export const TECHS = [
   {
-    name: "React",
-    link: "/",
+    name: "Blog 1",
+    link: "./Blog 1.pdf",
   },
   {
-    name: "Java",
-    link: "/",
+    name: "Blog 2",
+    link: "./Blog 2.pdf",
   },
   {
-    name: "Spring",
-    link: "/",
+    name: "Blog 3",
+    link: "./Blog 3.pdf",
   },
   {
-    name: "Spring Boot",
-    link: "/",
+    name: "Blog 4",
+    link: "./Blog 4.pdf",
   },
 ];
 

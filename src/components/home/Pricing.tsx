@@ -92,9 +92,18 @@ const Pricing = () => {
                                         </span>
                                     </span>
                                     :
-                                    <span className=" w-full text-center whitespace-nowrap rounded-full bg-gradient-to-r from-red-500 to-orange-400 text-white px-2.5 py-2.5 text-[15px] font-semibold uppercase leading-5 tracking-wide">
-                                        Politicians Special ✨
-                                    </span>
+                                    price.speciality === "Politicians Special ✨"
+                                        ?
+                                        <span className=" w-fit text-center whitespace-nowrap rounded-full bg-gradient-to-r from-red-500 to-orange-400 text-white mx-auto px-4 py-2 text-[13px] font-semibold uppercase leading-5 tracking-wide">
+                                            {price.speciality}
+                                        </span>
+                                        :
+                                        <span className="relative inline-block overflow-hidden rounded-full p-[1px] mx-auto">
+                                            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#a9a9a9_0%,#0c0c0c_50%,#a9a9a9_100%)] dark:bg-[conic-gradient(from_90deg_at_50%_50%,#171717_0%,#737373_50%,#171717_100%)]" />
+                                            <div className="inline-flex h-full w-full cursor-pointer justify-center rounded-full bg-white px-3 py-1 text-xs font-medium leading-5 text-slate-600 backdrop-blur-xl dark:bg-black dark:text-slate-200">
+                                                {price.speciality}
+                                            </div>
+                                        </span>
                                 }
                             </motion.div>
 
@@ -111,7 +120,7 @@ const Pricing = () => {
                                         <span className="absolute right-0 -mt-12 h-32 w-8 translate-x-12 rotate-12 transform-gpu bg-white opacity-10 transition-all duration-1000 ease-out group-hover:-translate-x-96 dark:bg-black" />
                                         {(!isLoading ||
                                             (isLoading && id !== price.id)) && (
-                                                <p>Contact Us</p>
+                                                <p>Subscribe</p>
                                             )}
 
                                         {isLoading && id === price.id && (
