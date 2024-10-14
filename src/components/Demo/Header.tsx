@@ -18,7 +18,7 @@ const Header = () => {
                     <ShareProfile />
                     <a href="https://samparkbharat.com/auth/register" target="_blank">
                         <Button
-                            className={`border-2 border-${themeClasses.background.substring(3)} hover:${themeClasses.background} hover:text-white`}
+                            className={`border-2 border-${themeClasses.background.substring(3)} hover:${themeClasses.background}`}
                             variant={"outline"}>
                             <span className="hidden md:inline">Get Your vCard</span>
                             <RiContactsLine className=" ml-1 w-4 h-4" />

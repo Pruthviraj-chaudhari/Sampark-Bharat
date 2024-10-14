@@ -68,7 +68,7 @@ const ShareProfile = () => {
     return (
         <Dialog>
             <DialogTrigger asChild>
-                <Button className={`border-2 border-${themeClasses.background.substring(3)} hover:${themeClasses.background} hover:text-white`} variant={"outline"}><span className="hidden md:inline">Share</span> <GoShareAndroid className=" ml-1 w-4 h-4" /></Button>
+                <Button className={`border-2 border-${themeClasses.background.substring(3)} hover:${themeClasses.background}`} variant={"outline"}><span className="hidden md:inline">Share</span> <GoShareAndroid className=" ml-1 w-4 h-4" /></Button>
             </DialogTrigger>
             <DialogContent className=" max-w-[90vw] md:max-w-[425px] bg-white">
                 <div className="flex flex-col items-center justify-center gap-6 py-8">
